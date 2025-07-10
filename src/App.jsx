@@ -9,6 +9,7 @@ import Pricing from "./components/pages/Pricing"
 import Services from "./components/pages/Services"
 import Successstories from "./components/pages/Successstories"
 import Home from "./components/pages/Home"
+import Error from"./components/pages/Error"
 function App() {
 
   return (
@@ -24,7 +25,8 @@ function App() {
           <Route path="/main" element={<Main/>}/>
           <Route path="/pricing" element={<Pricing/>}/>
           <Route path="/services" element={<Services/>}/>
-          <Route path="/successstories" element={<Successstories/>}/>        
+          <Route path="/successstories" element={<Successstories/>}/>  
+          <Route path="/*" element={<Error/>}/>      
         </Routes>
       </BrowserRouter>
     </>
