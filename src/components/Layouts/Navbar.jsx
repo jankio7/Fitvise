@@ -96,16 +96,6 @@ export default function Navbar(){
                             </Link>
                         </li>
                         <li className="nav-item">
-                            <Link to="/pricing" className="nav-link">
-                            Pricing
-                            </Link>
-                        </li>
-                        <li className="nav-item">
-                            <Link to="/services" className="nav-link">
-                            Services
-                            </Link>
-                        </li>
-                        <li className="nav-item">
                             <Link to="/successstories" className="nav-link">
                             Stories
                             </Link>
@@ -118,6 +108,11 @@ export default function Navbar(){
                         <li className="nav-item">
                             <Link to="/contact" className="nav-link">
                             Contact
+                            </Link>
+                        </li>
+                        <li className="nav-item mt-4">
+                            <Link to="/login" className="btn btn-primary">
+                            Login
                             </Link>
                         </li>
                         </ul>

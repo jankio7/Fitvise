@@ -1,9 +1,6 @@
-import Footer from "../Layouts/Footer";
-import Navbar from "../Layouts/Navbar";
 function Blog(){
     return(
         <>
-          <Navbar/>
           <section
             className="hero-wrap hero-wrap-2"
             style={{ backgroundImage: 'url("/assets/images/bg_2.jpg")' }}
@@ -474,7 +471,6 @@ function Blog(){
             </div>
           </section>{" "}
           {/* .section */}
-          <Footer/>
         </>
 
     )

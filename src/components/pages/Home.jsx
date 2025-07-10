@@ -1,11 +1,8 @@
 import { Link } from "react-router-dom";
-import Navbar from "../Layouts/Navbar";
-import Footer from "../Layouts/Footer";
 
 export default function Home(){
     return(
        <>
-        <Navbar/>
           <div className="hero-wrap js-fullheight">
             <div className="home-slider owl-carousel js-fullheight">
               <div
@@ -955,7 +952,6 @@ export default function Home(){
                     </div>
             </div>
           </section> */}
-          <Footer/>
         </>
  
     )
