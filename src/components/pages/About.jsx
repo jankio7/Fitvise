@@ -35,9 +35,9 @@ function About(){
                   <div className="col-md-7 wrap-about py-4 py-md-5 ftco-animate">
                     <div className="heading-section mb-5">
                       <div className="pl-md-5">
-                        <span className="subheading mb-2">Welcome to Healthcare</span>
+                        <span className="subheading mb-2">Welcome to Fit Vise</span>
                         <h2 className="mb-2">
-                          Hello! Health Care is a natural way of improving your health
+                          Hello! Fit Vise is a natural way of improving your health
                         </h2>
                       </div>
                     </div>

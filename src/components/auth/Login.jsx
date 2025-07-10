@@ -52,6 +52,7 @@ export default function Login(){
                                         name="email"
                                         id="email"
                                         placeholder="Email"
+                                        required
                                     />
                                 </div>
                                 </div>
@@ -66,6 +67,7 @@ export default function Login(){
                                                 name="subject"
                                                 id="subject"
                                                 placeholder="Password"
+                                                required
                                             />
                                         </div>
                                     </div>
