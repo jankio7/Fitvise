@@ -11,6 +11,8 @@ import Error from"./components/pages/Error"
 import Layout from "./components/Layouts/Layout"
 import Login from "./components/auth/Login"
 import Register from "./components/auth/Register"
+import Pricing from "./components/pages/Pricing"
+import Services from "./components/pages/Services"
 function App() {
 
   return (
@@ -18,7 +20,7 @@ function App() {
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<Layout/>}>
-            <Route path="" element={<Home/>}/>
+            <Route index element={<Home/>}/>
             <Route path="about" element={<About/>} />
             <Route path="blog" element={<Blog/>}/>
             <Route path="blogsingle" element={<Blogsingle/>}/>
@@ -26,6 +28,8 @@ function App() {
             <Route path="contact" element={<Contact/>}/>
             <Route path="main" element={<Main/>}/>
             <Route path="successstories" element={<Successstories/>}/>
+            <Route path="pricing" element={<Pricing/>}/>
+            <Route path="services" element={<Services/>}/>
             <Route path="login" element={<Login/>}/>   
             <Route path="register" element={<Register/>}/> 
           </Route>  

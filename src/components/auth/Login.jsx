@@ -2,49 +2,31 @@ import { Link } from "react-router-dom";
 
 export default function Login(){
     return(
-        <>
-          <section
-              className="hero-wrap hero-wrap-2"
-              style={{ backgroundImage: 'url("/assets/images/bg_2.jpg")' }}
-              data-stellar-background-ratio="0.5"
-            >
-              <div className="overlay" />
-              <div className="container">
-                <div className="row no-gutters slider-text align-items-end">
-                  <div className="col-md-9 ftco-animate pb-5">
-                    <p className="breadcrumbs mb-2">
-                      <span className="mr-2">
-                        <a href="index.html">
-                          Home <i className="ion-ios-arrow-forward" />
-                        </a>
-                      </span>{" "}
-                      <span>
-                        Login <i className="ion-ios-arrow-forward" />
-                      </span>
-                    </p>
-                    <h1 className="mb-0 bread">Login</h1>
-                  </div>
-                </div>
-              </div>
-          </section>
-            <div className="col-lg-8 col-md-7 order-md-last d-flex align-items-stretch">
-                <div className="contact-wrap w-100 p-md-5 p-4">
-                    <h3 className="mb-4">Login</h3>
-                    <div id="form-message-warning" className="mb-4" />
-                    <div id="form-message-success" className="mb-4">
-                        Your message was sent, thank you!
-                    </div>
-                    <form
-                        method="POST"
-                        id="contactForm"
-                        name="contactForm"
-                        className="contactForm"
-                    >
-                        <div className="row">
-                            <div className="col-md-12">
-                                <div className="form-group">
+        <>             
+            <section className="ftco-section bg-light">
+                <div className="container">
+                <div className="row justify-content-center">
+                    <div className="col-md-12">
+                    <div className="wrapper">
+                        <div className="row no-gutters">
+                        <div className="col-lg-8 col-md-7 order-md-last d-flex align-items-stretch">
+                            <div className="contact-wrap w-100 p-md-5 p-4">
+                                <h3 className="mb-4">Login</h3>
+                                <div id="form-message-warning" className="mb-4" />
+                            <div id="form-message-success" className="mb-4">
+                                Your message was sent, thank you!
+                            </div>
+                            <form
+                                method="POST"
+                                id="contactForm"
+                                name="contactForm"
+                                className="contactForm"
+                            >
+                                <div className="row">
+                                <div className="col-md-6">
+                                    <div className="form-group">
                                     <label className="label" htmlFor="email">
-                                        Email Address
+                                        Email
                                     </label>
                                     <input
                                         type="email"
@@ -54,38 +36,56 @@ export default function Login(){
                                         placeholder="Email"
                                         required
                                     />
-                                </div>
-                                </div>
-                                    <div className="col-md-12">
-                                        <div className="form-group">
-                                            <label className="label" htmlFor="subject">
-                                                Password
-                                            </label>
-                                            <input
-                                                type="password"
-                                                className="form-control"
-                                                name="subject"
-                                                id="subject"
-                                                placeholder="Password"
-                                                required
-                                            />
-                                        </div>
                                     </div>
-                                    <div className="col-md-12">
-                                        <div className="form-group">
-                                            <input
-                                                type="submit"
-                                                defaultValue="Submit"
-                                                className="btn btn-primary"
-                                            />
-                                            <div className="submitting" />
-                                        </div>
+                                </div>
+                                <div className="col-md-12">
+                                    <div className="form-group">
+                                    <label className="label" htmlFor="subject">
+                                    Password
+                                    </label>
+                                    <input
+                                        type="text"
+                                        className="form-control"
+                                        name="subject"
+                                        id="subject"
+                                        placeholder="Password"
+                                        required
+                                    />
                                     </div>
+                                </div>
+                                <div className="col-md-12">
+                                    <div className="form-group">
+                                    <input
+                                        type="submit"
+                                        defaultValue="Submit"
+                                        className="btn btn-primary"
+                                    />
+                                    <div className="submitting" />
+                                    </div>
+                                </div>
                                 </div>
                             </form>
-                            <div>Don't have an account? <Link to={"/register"}>Register Here!</Link></div>
+                            </div>
+                        </div>
+                        <div className="col-lg-4 col-md-5 d-flex align-items-stretch">
+                            <div className="info-wrap bg-primary w-100 p-md-5 p-4">
+                                <div className="dbox w-100 d-flex align-items-start"
+                                
+                                style={{ backgroundImage: "url(/assets/images/coach-1.jpg)" }}
+                            ></div>  
+                            </div>
+                            
+                            </div>
+                        </div>
+                        </div>
                     </div>
-            </div>
+                    </div>
+                    <div className="col-md-12">
+                    <div id="map" className="map" />
+                    </div>
+                </div>
+                </div>
+            </section>
         </>
     )
 }
