@@ -82,37 +82,37 @@ export default function Navbar(){
                         <ul className="navbar-nav ml-auto">
                         <li className="nav-item">
                             <Link to="/" className="nav-link">
-                            Home
+                              Home
                             </Link>
                         </li>
                         <li className="nav-item">
                             <Link to="/about" className="nav-link">
-                            About
+                              About
                             </Link>
                         </li>
                         <li className="nav-item">
                             <Link to="/coach" className="nav-link">
-                            Coach
+                              Coach
                             </Link>
                         </li>
                         <li className="nav-item">
                             <Link to="/successstories" className="nav-link">
-                            Stories
+                              Stories
                             </Link>
                         </li>
                         <li className="nav-item active">
                             <Link to="/blog" className="nav-link">
-                            Blog
+                              Blog
                             </Link>
                         </li>
                         <li className="nav-item">
                             <Link to="/contact" className="nav-link">
-                            Contact
+                              Contact
                             </Link>
                         </li>
                         <li className="nav-item mt-4">
                             <Link to="/login" className="btn btn-primary">
-                            Login
+                              Login
                             </Link>
                         </li>
                         </ul>

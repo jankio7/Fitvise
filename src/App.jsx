@@ -6,13 +6,14 @@ import Coach from "./components/pages/Coach"
 import Contact from "./components/pages/Contact"
 import Main from "./components/pages/Main"
 import Successstories from "./components/pages/Successstories"
+import Pricing from "./components/pages/Pricing"
+import Services from "./components/pages/Services"
 import Home from "./components/pages/Home"
 import Error from"./components/pages/Error"
 import Layout from "./components/Layouts/Layout"
 import Login from "./components/auth/Login"
 import Register from "./components/auth/Register"
-import Pricing from "./components/pages/Pricing"
-import Services from "./components/pages/Services"
+import { ToastContainer } from "react-toastify"
 function App() {
 
   return (
@@ -36,6 +37,7 @@ function App() {
           <Route path="/*" element={<Error/>}/>
         </Routes>
       </BrowserRouter>
+      <ToastContainer/>
     </>
   )
 }
