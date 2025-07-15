@@ -1,5 +1,3 @@
-import { Link } from "react-router-dom";
-
 export default function Home(){
     return(
        <>
@@ -625,52 +623,6 @@ export default function Home(){
               </div>
             </div>
           </section>
-        {/* <section class="ftco-section">
-            <div class="container">
-              <div class="row justify-content-center pb-5 mb-3">
-          <div class="col-md-7 heading-section text-center ftco-animate">
-            <span class="subheading">Other Services</span>
-            <h2>How it works</h2>
-          </div>
-        </div>
-              <div class="row d-flex no-gutters">
-                <div class="col-md-6 d-flex">
-                  <div class="img img-video d-flex align-self-stretch align-items-center justify-content-center justify-content-md-end mb-4 mb-sm-0" style="background-image:url(images/about.jpg);">
-                  </div>
-                </div>
-                <div class="col-md-6 pl-md-5 py-md-5">
-                  <div class="services-2 w-100 d-flex">
-                    <div class="icon d-flex align-items-center justify-content-center"><span class="flaticon-account"></span></div>
-                    <div class="text pl-4">
-                      <h4>Follow the program</h4>
-                      <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia</p>
-                    </div>
-                  </div>
-                  <div class="services-2 w-100 d-flex">
-                    <div class="icon d-flex align-items-center justify-content-center"><span class="flaticon-skills"></span></div>
-                    <div class="text pl-4">
-                      <h4>Work for result</h4>
-                      <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia</p>
-                    </div>
-                  </div>
-                  <div class="services-2 w-100 d-flex">
-                    <div class="icon d-flex align-items-center justify-content-center"><span class="flaticon-performance"></span></div>
-                    <div class="text pl-4">
-                      <h4>Eat healthy Food</h4>
-                      <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia</p>
-                    </div>
-                  </div>
-                  <div class="services-2 w-100 d-flex">
-                    <div class="icon d-flex align-items-center justify-content-center"><span class="flaticon-event"></span></div>
-                    <div class="text pl-4">
-                      <h4>Enjoy your life</h4>
-                      <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia</p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </section> */}
           <section className="ftco-section bg-light">
             <div className="container">
               <div className="row justify-content-center pb-5 mb-3">
@@ -929,29 +881,6 @@ export default function Home(){
               </div>
             </div>
           </section>
-          {/* <section class="ftco-section ftco-no-pb ftco-no-pt">
-            <div class="container">
-              <div class="row">
-                      <div class="col-md-12">
-                        <div class="bg-secondary w-100 rounded p-4">
-                          <div class="row">
-                            <div class="col-md-7 d-flex align-items-center">
-                              <h2 class="mb-3 mb-sm-0" style="color:black; font-size: 18px;">Subcribe for our weekly tips</h2>
-                            </div>
-                            <div class="col-md-5 d-flex align-items-center">
-                              <form action="#" class="subscribe-form">
-                                <div class="form-group d-flex">
-                                  <input type="text" class="form-control" placeholder="Enter email address">
-                                  <input type="submit" value="Subscribe" class="submit px-3">
-                                </div>
-                              </form>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-            </div>
-          </section> */}
         </>
  
     )

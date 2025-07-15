@@ -1,6 +1,8 @@
-import { useState } from "react"
-import { Link, useNavigate } from "react-router-dom"
-import { toast } from "react-toastify"
+import { signInWithEmailAndPassword, signInWithPopup, GoogleAuthProvider } from "firebase/auth";
+import { useState } from "react";
+import { Link, useNavigate } from "react-router-dom";
+import { toast } from "react-toastify";
+import { auth } from "../../Firebase";
 
 export default function Login(){
     const [email, setEmail]=useState("")
@@ -14,13 +16,29 @@ export default function Login(){
     let nav=useNavigate()
     const handleForm=(event)=>{
         event.preventDefault()
-        if(email=="admin@gmail.com" && password=="2025"){
+        signInWithEmailAndPassword(auth,email,password)
+        .then((userCred)=>{
+            console.log("sign in", userCred.user.uid);
             toast.success("Login successfully!!")
             nav("/")
-        }else{
-            toast.error("Invalid credentials");
-        }
-    }
+    })
+    .catch((error)=>{
+        toast.error(error.message)
+    })
+}
+    const signInGoogle=()=>{
+    let provider=new GoogleAuthProvider()
+    signInWithPopup(auth, provider)
+    .then((userCred)=>{
+        console.log(userCred.user.uid);
+        toast.success("Login successfully")
+        nav("/")
+    })
+    .catch((error)=>{
+      toast.error(error.message)
+    })
+  }
+
     return(
         <>
             <section
@@ -114,6 +132,7 @@ export default function Login(){
                                                     </div>
                                                 </div>
                                             </form>
+                                            <button type="button" onClick={signInGoogle} className="btn btn-danger"><i class="bi bi-google"></i> Sign In with google</button>
                                            <div>Don't have an account ? <Link to={"/register"}>Register Here !</Link></div>
                                         </div>
                                     </div>
