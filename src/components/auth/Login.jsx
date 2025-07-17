@@ -1,43 +1,55 @@
-import { signInWithEmailAndPassword, signInWithPopup, GoogleAuthProvider } from "firebase/auth";
-import { useState } from "react";
-import { Link, useNavigate } from "react-router-dom";
-import { toast } from "react-toastify";
-import { auth } from "../../Firebase";
-
+import { GoogleAuthProvider, signInWithEmailAndPassword, signInWithPopup } from "firebase/auth"
+import { useState } from "react"
+import { Link, useNavigate } from "react-router-dom"
+import { toast } from "react-toastify"
+import { auth } from "../../Firebase"
+import { doc, getDoc } from "firebase/firestore"
 export default function Login(){
     const [email, setEmail]=useState("")
     const [password, setPassword]=useState("")
     const changeEmail=(event)=>{
+        console.log(event);
         setEmail(event.target.value)
-    }
-    const changePassword=(event)=>{
-        setPassword(event.target.value)
     }
     let nav=useNavigate()
     const handleForm=(event)=>{
         event.preventDefault()
-        signInWithEmailAndPassword(auth,email,password)
+        signInWithEmailAndPassword(auth, email, password)
         .then((userCred)=>{
-            console.log("sign in", userCred.user.uid);
-            toast.success("Login successfully!!")
+            let userId=userCred.user.uid
+            getUserData(userId)
+        })
+        .catch((error)=>{
+            toast.error(error.message);
+        })
+    }
+    const getUserData=async (userId)=>{
+        let userDoc=await getDoc((doc(db, "users", userId)))
+        let userData=userDoc.data()
+        sessionStorage.setItem("name", userData?.name)
+        sessionStorage.setItem("email", userData?.email)
+        sessionStorage.setItem("userType", userData?.userType)
+        sessionStorage.setItem("userId", userData?.userId)
+        sessionStorage.setItem("isLogin", userData?.true)
+        toast.success("Login successfully")
+        if(userData?.userType==1){
+            nav("/admin")
+        }else{
             nav("/")
-    })
-    .catch((error)=>{
-        toast.error(error.message)
-    })
-}
+        }
+    }
     const signInGoogle=()=>{
     let provider=new GoogleAuthProvider()
-    signInWithPopup(auth, provider)
-    .then((userCred)=>{
-        console.log(userCred.user.uid);
-        toast.success("Login successfully")
-        nav("/")
-    })
-    .catch((error)=>{
-      toast.error(error.message)
-    })
-  }
+         signInWithPopup(auth, provider)
+         .then((userCred)=>{
+            let userId=userCred.user.uid
+            getUserData(userId)
+         })
+        .catch((error)=>{
+            toast.error(error.message)
+        })
+    }
+
 
     return(
         <>
@@ -116,7 +128,9 @@ export default function Login(){
                                                                 placeholder="Password"
                                                                 required
                                                                 value={password}
-                                                                onChange={changePassword}
+                                                                onChange={(event)=>{
+                                                                    setPassword(event.target.value)
+                                                                }}
                                                             />
                                                         </div>
                                                     </div>
@@ -132,7 +146,7 @@ export default function Login(){
                                                     </div>
                                                 </div>
                                             </form>
-                                            <button type="button" onClick={signInGoogle} className="btn btn-danger"><i class="bi bi-google"></i> Sign In with google</button>
+                                            <button type="button" onClick={signInGoogle} className="btn btn-danger"><i class="bi bi-google"></i> Sign in with google</button>
                                            <div>Don't have an account ? <Link to={"/register"}>Register Here !</Link></div>
                                         </div>
                                     </div>

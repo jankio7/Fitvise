@@ -1,6 +1,9 @@
-import { Link } from "react-router-dom"
+import { Link, useNavigate } from "react-router-dom"
 
 export default function Navbar(){
+  let isLogin=sessionStorage.getItem("isLogin")
+  let name=sessionStorage.getItem("name")
+ 
     return(
         <>
             <div className="wrap">
@@ -111,9 +114,16 @@ export default function Navbar(){
                             </Link>
                         </li>
                         <li className="nav-item mt-4">
+                          { 
+                            isLogin?
+                            <Link to="#" onClick={logout} className="btn btn-primary">
+                              Login{name}
+                            </Link>
+                            :
                             <Link to="/login" className="btn btn-primary">
                               Login
                             </Link>
+                          }  
                         </li>
                         </ul>
                     </div>
