@@ -11,7 +11,7 @@ export default function Login(){
         console.log(event);
         setEmail(event.target.value)
     }
-    let nav=useNavigate()
+    let nav= useNavigate()
     const handleForm=(event)=>{
         event.preventDefault()
         signInWithEmailAndPassword(auth, email, password)
@@ -24,32 +24,31 @@ export default function Login(){
         })
     }
     const getUserData=async (userId)=>{
-        let userDoc=await getDoc((doc(db, "users", userId)))
-        let userData=userDoc.data()
-        sessionStorage.setItem("name", userData?.name)
-        sessionStorage.setItem("email", userData?.email)
-        sessionStorage.setItem("userType", userData?.userType)
-        sessionStorage.setItem("userId", userData?.userId)
-        sessionStorage.setItem("isLogin", userData?.true)
-        toast.success("Login successfully")
-        if(userData?.userType==1){
-            nav("/admin")
-        }else{
-            nav("/")
-        }
+       let userDoc=await getDoc((doc(db, "users", userId)))
+       let userData=userDoc.data()
+       sessionStorage.setItem("name", userData?.name)
+       sessionStorage.setItem("email", userData?.email)
+       sessionStorage.setItem("userType", userData?.userType)  
+       sessionStorage.setItem("userId", userId)  
+       sessionStorage.setItem("isLogin", true)  
+       toast.success("Login successfully")  
+       if(userData?.userType==1){  
+       nav("/admin")
+       }else{
+           nav("/")
+       }
     }
     const signInGoogle=()=>{
-    let provider=new GoogleAuthProvider()
-         signInWithPopup(auth, provider)
-         .then((userCred)=>{
+        let provider=new GoogleAuthProvider()
+        signInWithPopup(auth, provider)
+        .then((userCred)=>{
             let userId=userCred.user.uid
             getUserData(userId)
-         })
+        })
         .catch((error)=>{
             toast.error(error.message)
         })
-    }
-
+    } 
 
     return(
         <>
