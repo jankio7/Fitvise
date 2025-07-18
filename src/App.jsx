@@ -15,6 +15,7 @@ import Login from "./components/auth/Login"
 import Register from "./components/auth/Register"
 import { ToastContainer } from "react-toastify"
 import AdminLayout from "./components/Layouts/AdminLayout"
+import AddDietplan from "./components/admin/dietplans/Adddietplan"
 
 
 function App() {
@@ -37,7 +38,9 @@ function App() {
             <Route path="login" element={<Login/>}/>   
             <Route path="register" element={<Register/>}/> 
           </Route>  
-            <Route path="/admin" element={<AdminLayout/>}/>
+            <Route path="/admin" element={<AdminLayout/>}>
+              <Route path="dietplans/add" element={<AddDietplan/>}/>
+            </Route>
           <Route path="/*" element={<Error/>}/>
         </Routes>
       </BrowserRouter>

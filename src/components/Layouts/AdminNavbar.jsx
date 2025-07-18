@@ -112,27 +112,12 @@ export default function AdminNavbar(){
                         </li>
                         <li className="nav-item">
                             <Link to="/about" className="nav-link">
-                              About
-                            </Link>
-                        </li>
-                        <li className="nav-item">
-                            <Link to="/coach" className="nav-link">
-                              Coach
-                            </Link>
-                        </li>
-                        <li className="nav-item">
-                            <Link to="/successstories" className="nav-link">
-                              Stories
+                              Diet Plans
                             </Link>
                         </li>
                         <li className="nav-item active">
                             <Link to="/blog" className="nav-link">
-                              Blog
-                            </Link>
-                        </li>
-                        <li className="nav-item">
-                            <Link to="/contact" className="nav-link">
-                              Contact
+                              Users
                             </Link>
                         </li>
                         <li className="nav-item mt-4">
