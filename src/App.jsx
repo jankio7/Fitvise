@@ -10,11 +10,12 @@ import Pricing from "./components/pages/Pricing"
 import Services from "./components/pages/Services"
 import Home from "./components/pages/Home"
 import Error from"./components/pages/Error"
-import Layout from "./components/Layouts/Layout"
+import Layout from "./components/layouts/Layout"
 import Login from "./components/auth/Login"
 import Register from "./components/auth/Register"
 import { ToastContainer } from "react-toastify"
 import AdminLayout from "./components/Layouts/AdminLayout"
+
 
 function App() {
 

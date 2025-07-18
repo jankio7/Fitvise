@@ -15,7 +15,6 @@ import  { useNavigate } from "react-router-dom"
          event.preventDefault()
          createUserWithEmailAndPassword(auth, email, password)
          .then((userCred)=>{
-            // console.log(userCred.user.uid);
             let userId=userCred.user.uid
             saveData(userId)
          })
@@ -34,8 +33,6 @@ import  { useNavigate } from "react-router-dom"
                status:true,
                createdAt:Timestamp.now()
            }
-               //console.log(data);
-           //setDoc(doc(db, collectionName, id))
             await setDoc(doc(db, "users", userId), data)
             toast.success("Registered successfully")
             getUserData(userId)
@@ -45,8 +42,7 @@ import  { useNavigate } from "react-router-dom"
             }
         }
             const getUserData=async (userId)=>{
-                let userDoc=await getDoc(doc(db, "users", userID))
-                console.log(userDoc.data())
+                let userDoc=await getDoc(doc(db, "users", userId))
                 let userData=userDoc.data()            
                 sessionStorage.setItem("name", userData.name)
                 sessionStorage.setItem("email", userData.email)

@@ -2,15 +2,12 @@ import { GoogleAuthProvider, signInWithEmailAndPassword, signInWithPopup } from 
 import { useState } from "react"
 import { Link, useNavigate } from "react-router-dom"
 import { toast } from "react-toastify"
-import { auth } from "../../Firebase"
+import { auth, db } from "../../Firebase"
 import { doc, getDoc } from "firebase/firestore"
+
 export default function Login(){
     const [email, setEmail]=useState("")
     const [password, setPassword]=useState("")
-    const changeEmail=(event)=>{
-        console.log(event);
-        setEmail(event.target.value)
-    }
     let nav= useNavigate()
     const handleForm=(event)=>{
         event.preventDefault()
@@ -24,7 +21,7 @@ export default function Login(){
         })
     }
     const getUserData=async (userId)=>{
-       let userDoc=await getDoc((doc(db, "users", userId)))
+       let userDoc=await getDoc(doc(db, "users", userId))
        let userData=userDoc.data()
        sessionStorage.setItem("name", userData?.name)
        sessionStorage.setItem("email", userData?.email)
@@ -33,7 +30,7 @@ export default function Login(){
        sessionStorage.setItem("isLogin", true)  
        toast.success("Login successfully")  
        if(userData?.userType==1){  
-       nav("/admin")
+        nav("/admin")
        }else{
            nav("/")
        }
@@ -110,7 +107,10 @@ export default function Login(){
                                                             placeholder="Email"
                                                             required
                                                             value={email}
-                                                            onChange={changeEmail}
+                                                            onChange={(event)=>{
+                                                                setEmail(event.target.value)
+                                                            }}
+
                                                         />
                                                         </div>
                                                     </div>

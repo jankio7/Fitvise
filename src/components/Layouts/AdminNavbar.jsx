@@ -1,14 +1,13 @@
 import { Link, useNavigate } from "react-router-dom"
 import Swal from "sweetalert2"
 
-export default function Navbar(){
+export default function AdminNavbar(){
   let isLogin=sessionStorage.getItem("isLogin")
   let name=sessionStorage.getItem("name")
   const nav=useNavigate()
   const logout=()=>{
     Swal.fire({
     title: "Are you sure you want to Logout ?",
-    //text: "You won't be able to revert this!",
     icon: "warning",
     showCancelButton: true,
     confirmButtonColor: "#3085d6",
