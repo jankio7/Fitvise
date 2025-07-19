@@ -15,15 +15,15 @@ export default function AddDietplan(){
     const handleForm=async(event)=>{
         event.preventDefault()
         const formData = new FormData();
-                formData.append("file", image);
-                formData.append("upload_preset", "images"); 
+                // formData.append("file", image);
+                // formData.append("upload_preset", "images"); 
         
-                try {
-                    const response = await axios.post(
-                        `https://api.cloudinary.com/v1_1/dnxng3fkk/image/upload`, 
-                        formData
-                    );
-                    setUrl(response.data.secure_url);
+                 try {
+                     const response = await axios.post(
+                         `https://api.cloudinary.com/v1_1/dnxng3fkk/image/upload`, 
+                         formData
+                     );
+                     setUrl(response.data.secure_url);
                     saveData()
                 } catch (error) {
                     toast.error("Error uploading image:", error.message);
@@ -110,14 +110,14 @@ export default function AddDietplan(){
                                                                 Day
                                                             </label>
                                                             <input
-                                                                type="text"
+                                                                type="number"
                                                                 className="form-control"
                                                                 name="day"
                                                                 id="day"
                                                                 placeholder="Day"
                                                                 value={day}
                                                                 onChange={(event)=>{
-                                                                    setDescription(event.target.value)
+                                                                    setDay(event.target.value)
                                                                 }}
                                                             />
                                                         </div>
