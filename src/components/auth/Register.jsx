@@ -10,6 +10,9 @@ import  { useNavigate } from "react-router-dom"
      const [email, setEmail]=useState("")
      const [password, setPassword]=useState("")
      const [contact, setContact]=useState("")
+     const [gender, setGender]=useState("")
+    const [goals, setGoals]=useState("")
+    const [age, setAge]=useState("")
      const nav=useNavigate()
      const handleForm=(event)=>{
          event.preventDefault()
@@ -182,7 +185,59 @@ import  { useNavigate } from "react-router-dom"
                                                     />
                                                     </div>
                                                 </div>
-
+                                                <div className="col-md-12">
+                                                    <div className="form-group">
+                                                    <label className="label" htmlFor="subject">
+                                                        Gender
+                                                    </label>
+                                                    <select value={gender} onChange={(event)=>{
+                                                                setGender(event.target.value)
+                                                            }}className="form-control">
+                                                                <option value={""} disabled selected>Choose one</option>
+                                                                <option>Male</option>
+                                                                <option>Female</option>
+                                                                <option>Others</option>
+                                                            </select>
+                                                    </div>
+                                                </div>
+                                                <div className="col-md-12">
+                                                    <div className="form-group">
+                                                    <label className="label" htmlFor="subject">
+                                                        Goals
+                                                    </label>
+                                                    <input
+                                                        type="text"
+                                                        className="form-control"
+                                                        name="goala"
+                                                        id="subject"
+                                                        placeholder="Goals"
+                                                        required
+                                                        value={goals}
+                                                        onChange={(event)=>{
+                                                            setGoals(event.target.value)
+                                                        }}
+                                                    />
+                                                    </div>
+                                                </div>
+                                                <div className="col-md-12">
+                                                    <div className="form-group">
+                                                    <label className="label" htmlFor="subject">
+                                                        Age
+                                                    </label>
+                                                    <input
+                                                        type="number"
+                                                        className="form-control"
+                                                        name="age"
+                                                        id="subject"
+                                                        placeholder="Age"
+                                                        required
+                                                        value={age}
+                                                        onChange={(event)=>{
+                                                            setAge(event.target.value)
+                                                        }}
+                                                    />
+                                                    </div>
+                                                </div>
                                                 <div className="col-md-12">
                                                     <div className="form-group">
                                                     <input

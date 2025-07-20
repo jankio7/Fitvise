@@ -14,23 +14,22 @@ export default function AddDietplan(){
 
     const handleForm=async(event)=>{
         event.preventDefault()
-        const formData = new FormData();
-                // formData.append("file", image);
-                // formData.append("upload_preset", "images"); 
+        //formData.append("file", image);
+                // formData.append("upload_preset", "images"); // Replace with your upload preset
         
-                 try {
-                     const response = await axios.post(
-                         `https://api.cloudinary.com/v1_1/dnxng3fkk/image/upload`, 
-                         formData
-                     );
-                     setUrl(response.data.secure_url);
-                    saveData()
-                } catch (error) {
-                    toast.error("Error uploading image:", error.message);
-                }
+                // try {
+                //     const response = await axios.post(
+                //         `https://api.cloudinary.com/v1_1/dnxng3fkk/image/upload`, // Replace with your Cloudinary cloud name
+                //         formData
+                //     );
+                //     setUrl(response.data.secure_url);
+                 saveData()
+                // } catch (error) {
+                //     toast.error("Error uploading image:", error.message);
+                // }
 
     }
-    const saveData=async()=>{
+    const saveData=async ()=>{
         try{ 
             let data={
                 day,
@@ -42,7 +41,8 @@ export default function AddDietplan(){
                 status:true,
                 createdAt:Timestamp.now()
             }
-            await addDoc(collection(db, "dietplan"),data)
+           // console.log(data);
+            await addDoc(collection(db, "dietplans"),data)
             toast.success("Diet plan added successfully")
             setDay("")
             setType("")
@@ -55,8 +55,6 @@ export default function AddDietplan(){
             toast.error(error.message)
         }
     }
- 
-
     return(
         <>
             <section

@@ -111,12 +111,12 @@ export default function AdminNavbar(){
                             </Link>
                         </li>
                         <li className="nav-item">
-                            <Link to="/about" className="nav-link">
+                            <Link to="/admin/dietplans/manage" className="nav-link">
                               Diet Plans
                             </Link>
                         </li>
                         <li className="nav-item active">
-                            <Link to="/blog" className="nav-link">
+                            <Link to="/admin/users/add" className="nav-link">
                               Users
                             </Link>
                         </li>
@@ -137,6 +137,7 @@ export default function AdminNavbar(){
                 </div>
             </nav>
           {/* END nav */}
+          
         </>
     )
 }
