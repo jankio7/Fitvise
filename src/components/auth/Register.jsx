@@ -6,36 +6,39 @@
 import  { useNavigate } from "react-router-dom"
 
  export default function Register(){
-     const [name, setName]=useState("")
-     const [email, setEmail]=useState("")
-     const [password, setPassword]=useState("")
-     const [contact, setContact]=useState("")
-     const [gender, setGender]=useState("")
+    const [name, setName]=useState("")
+    const [email, setEmail]=useState("")
+    const [password, setPassword]=useState("")
+    const [contact, setContact]=useState("")
+    const [gender, setGender]=useState("")
     const [goals, setGoals]=useState("")
     const [age, setAge]=useState("")
-     const nav=useNavigate()
-     const handleForm=(event)=>{
-         event.preventDefault()
-         createUserWithEmailAndPassword(auth, email, password)
-         .then((userCred)=>{
-            let userId=userCred.user.uid
-            saveData(userId)
-         })
-         .catch((error)=>{
-             toast.error(error.message)
-         })
-     }      
-      const saveData=async (userId)=>{      
-           try{
-           let data={
+    const nav=useNavigate()
+    const handleForm=(event)=>{
+        event.preventDefault()
+        createUserWithEmailAndPassword(auth, email, password)
+        .then((userCred)=>{
+           let userId=userCred.user.uid
+           saveData(userId)
+        })
+        .catch((error)=>{
+            toast.error(error.message)
+        })
+    }      
+        const saveData=async (userId)=>{      
+            try{
+            let data={
                name:name,
                email:email,
                contact:contact,
+               gender,
+               goals,
+               age,
                userType:3,
                userId:userId,
                status:true,
                createdAt:Timestamp.now()
-           }
+            }
             await setDoc(doc(db, "users", userId), data)
             toast.success("Registered successfully")
             getUserData(userId)

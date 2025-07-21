@@ -91,9 +91,6 @@ export default function AddDietplan(){
                                         <div className="contact-wrap w-100 p-md-5 p-4">
                                             <h3 className="mb-4"> Add diet</h3>
                                             <div id="form-message-warning" className="mb-4" />
-                                            <div id="form-message-success" className="mb-4">
-                                                Your message was sent, thank you!
-                                            </div>
                                             <form
                                                 method="POST"
                                                 id="contactForm"
@@ -122,7 +119,7 @@ export default function AddDietplan(){
                                                     </div>
                                                     <div className="col-md-12">
                                                         <div className="form-group">
-                                                            <label className="label" htmlFor="desc">
+                                                            <label className="label" htmlFor="type">
                                                             Type  
                                                             </label>
                                                             <select value={type} onChange={(event)=>{

@@ -116,7 +116,12 @@ export default function AdminNavbar(){
                             </Link>
                         </li>
                         <li className="nav-item active">
-                            <Link to="/admin/users/add" className="nav-link">
+                            <Link to="/admin/subscription/manage" className="nav-link">
+                              Subscription
+                            </Link>
+                        </li>
+                        <li className="nav-item">
+                            <Link to="/admin/users/manage" className="nav-link">
                               Users
                             </Link>
                         </li>

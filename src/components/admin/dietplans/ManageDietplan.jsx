@@ -47,11 +47,12 @@ export default function ManageDietplan(){
                     <div className="d-flex justify-content-end">
                         <Link to={"/admin/dietplans/add"} className="btn btn-outline-primary">Add New +</Link>
                     </div>
-                    <h1>Manage Diet plans</h1>
+                    <h3>Manage Diet plans</h3>
                     <table className="table table-hover table-striped">
                         <thead className="table-dark">
                             <tr>
                                 <th>Sr No.</th>
+                                <th>Day</th>
                                 <th>Type</th>
                                 <th>Meal 1</th>
                                 <th>Meal 2</th>
@@ -63,6 +64,7 @@ export default function ManageDietplan(){
                                 return( 
                                     <tr key={index}>
                                         <td>{index+1}</td>
+                                        <td>{el?.day}</td>
                                         <td>{el?.type}</td>
                                         <td>{el?.meal1}</td>
                                         <td>{el?.meal2}</td>
