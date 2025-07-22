@@ -52,11 +52,9 @@ export default function ManageDietplan(){
                         <thead className="table-dark">
                             <tr>
                                 <th>Sr No.</th>
-                                <th>Day</th>
-                                <th>Type</th>
-                                <th>Meal 1</th>
-                                <th>Meal 2</th>
-                                <th>Meal 3</th>
+                                <th>Goals</th>
+                                <th>Title</th>
+                                <th>Actions</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -64,12 +62,10 @@ export default function ManageDietplan(){
                                 return( 
                                     <tr key={index}>
                                         <td>{index+1}</td>
-                                        <td>{el?.day}</td>
-                                        <td>{el?.type}</td>
-                                        <td>{el?.meal1}</td>
-                                        <td>{el?.meal2}</td>
-                                        <td>{el?.meal3}</td>
-                                        </tr>
+                                        <td>{el?.goals}</td>
+                                        <td>{el?.title}</td>
+                                        <td>{el?.actions}</td>
+                                    </tr>
                                 )
                             })}
                         </tbody>

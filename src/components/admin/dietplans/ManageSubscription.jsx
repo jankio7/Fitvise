@@ -52,10 +52,11 @@ export default function ManageSubscription(){
                                 <thead className="table-dark">
                                     <tr>
                                         <th>Sr No.</th>
-                                        <th>Title</th>
-                                        <th>Type</th>
-                                        <th>Price</th>
-                                        <th>Description</th>
+                                        <th>User Details</th>
+                                        <th>Payment</th>
+                                        <th>Goals</th>
+                                        <th>Date</th>
+                                        <th>Item</th>
                                     </tr>
                                 </thead>
                                 <tbody>
@@ -63,10 +64,11 @@ export default function ManageSubscription(){
                                         return( 
                                             <tr key={index}>
                                                 <td>{index+1}</td>
-                                                <td>{el?.title}</td>
-                                                <td>{el?.type}</td>
-                                                <td>{el?.price}</td>
-                                                <td>{el?.description}</td>
+                                                <td>{el?.userdetails}</td>
+                                                <td>{el?.payment}</td>
+                                                <td>{el?.goals}</td>
+                                                <td>{el?.date}</td>
+                                                <td>{el?.item}</td>
                                             </tr>
                                         )
                                     })}

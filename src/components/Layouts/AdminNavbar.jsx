@@ -125,6 +125,11 @@ export default function AdminNavbar(){
                               Users
                             </Link>
                         </li>
+                        <li className="nav-item">
+                            <Link to="/admin/dietdetails/add" className="nav-link">
+                              Diet details
+                            </Link>
+                        </li>
                         <li className="nav-item mt-4">
                           { 
                             isLogin?

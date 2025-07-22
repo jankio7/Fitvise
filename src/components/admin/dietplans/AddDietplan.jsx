@@ -5,51 +5,44 @@ import { toast } from "react-toastify"
 
 
 export default function AddDietplan(){
-    const [day, setDay]=useState("")
+    const [goals, setGoals]=useState("")
+    const [title, setTitle]=useState("")
+    const [cuisine, setCuisine]=useState("")
     const [type, setType]=useState("")
     const [description, setDescription]=useState("")
-    const [meal1, setMeal1]=useState("")
-    const [meal2, setMeal2]=useState("")
-    const [meal3, setMeal3]=useState("")
+    const [duration, setDuration]=useState("")
+    const [min, setMin]=useState("")
+    const [max, setMax]=useState("")
 
     const handleForm=async(event)=>{
         event.preventDefault()
-        //formData.append("file", image);
-                // formData.append("upload_preset", "images"); // Replace with your upload preset
-        
-                // try {
-                //     const response = await axios.post(
-                //         `https://api.cloudinary.com/v1_1/dnxng3fkk/image/upload`, // Replace with your Cloudinary cloud name
-                //         formData
-                //     );
-                //     setUrl(response.data.secure_url);
-                 saveData()
-                // } catch (error) {
-                //     toast.error("Error uploading image:", error.message);
-                // }
-
+        saveData()
     }
     const saveData=async ()=>{
         try{ 
             let data={
-                day,
+                goals,
+                title,
+                cuisine,
                 type,
                 description,
-                meal1,
-                meal2,
-                meal3,
+                duration,
+                min,
+                max,
                 status:true,
                 createdAt:Timestamp.now()
             }
            // console.log(data);
             await addDoc(collection(db, "dietplans"),data)
             toast.success("Diet plan added successfully")
-            setDay("")
+            setGoals("")
+            setTitle("")
+            setCuisine("")
             setType("")
             setDescription("")
-            setMeal1("")
-            setMeal2("")
-            setMeal3("")
+            setDuration("")
+            setMin("")
+            setMax("")
         }
         catch(error){
             toast.error(error.message)
@@ -101,38 +94,72 @@ export default function AddDietplan(){
                                                 <div className="row">
                                                     <div className="col-md-12">
                                                         <div className="form-group">
-                                                            <label className="label" htmlFor="day">
-                                                                Day
+                                                            <label className="label" htmlFor="goals">
+                                                                Goals
                                                             </label>
                                                             <input
-                                                                type="number"
+                                                                type="text"
                                                                 className="form-control"
-                                                                name="day"
-                                                                id="day"
-                                                                placeholder="Day"
-                                                                value={day}
+                                                                name="goals"
+                                                                id="goals"
+                                                                placeholder="Goals"
+                                                                value={goals}
                                                                 onChange={(event)=>{
-                                                                    setDay(event.target.value)
+                                                                    setGoals(event.target.value)
                                                                 }}
                                                             />
                                                         </div>
                                                     </div>
                                                     <div className="col-md-12">
                                                         <div className="form-group">
-                                                            <label className="label" htmlFor="type">
-                                                            Type  
+                                                            <label className="label" htmlFor="title">
+                                                                Title
+                                                            </label>
+                                                            <input
+                                                                type="text"
+                                                                className="form-control"
+                                                                name="title"
+                                                                id="title"
+                                                                placeholder="Title"
+                                                                value={title}
+                                                                onChange={(event)=>{
+                                                                    setTitle(event.target.value)
+                                                                }}
+                                                            />
+                                                        </div>
+                                                    </div>
+                                                    <div className="col-md-12">
+                                                        <div className="form-group">
+                                                            <label className="label" htmlFor="cuisine">
+                                                            Cuisine  
                                                             </label>
                                                             <select value={type} onChange={(event)=>{
+                                                                setCuisine(event.target.value)
+                                                            }}className="form-control">
+                                                                <option value={""} disabled selected>Select</option>
+                                                                <option>North</option>
+                                                                <option>South</option>
+                                                                <option>East</option>
+                                                                <option>West</option>
+                                                            </select>
+                                                       </div>
+                                                    </div>
+                                                    <div className="col-md-12">
+                                                        <div className="form-group">
+                                                            <label className="label" htmlFor="diet type">
+                                                            Diet type  
+                                                            </label>
+                                                            <select value={type}
+                                                                onChange={(event)=>{
                                                                 setType(event.target.value)
                                                             }}className="form-control">
-                                                                <option value={""} disabled selected>Choose one</option>
+                                                                <option value={""} disabled selected>Select</option>
                                                                 <option>Breakfast</option>
                                                                 <option>Lunch</option>
                                                                 <option>Snacks</option>
                                                                 <option>Dinner</option>
                                                             </select>
-                                                       
-                                                        </div>
+                                                       </div>
                                                     </div>
                                                     <div className="col-md-12">
                                                         <div className="form-group">
@@ -154,54 +181,54 @@ export default function AddDietplan(){
                                                     </div>
                                                     <div className="col-md-12">
                                                         <div className="form-group">
-                                                            <label className="label" htmlFor="meal1">
-                                                                Meal 1
+                                                            <label className="label" htmlFor="duration">
+                                                                Duration
                                                             </label>
                                                             <input
                                                                 type="text"
                                                                 className="form-control"
-                                                                name="meal1"
-                                                                id="meal1"
-                                                                placeholder="Meal 1"
-                                                                value={meal1}
+                                                                name="duration"
+                                                                id="duration"
+                                                                placeholder="Duration"
+                                                                value={duration}
                                                                 onChange={(event)=>{
-                                                                    setMeal1(event.target.value)
+                                                                    setDuration(event.target.value)
                                                                 }}
                                                             />
                                                         </div>
                                                     </div>
                                                     <div className="col-md-12">
                                                         <div className="form-group">
-                                                            <label className="label" htmlFor="meal2">
-                                                                Meal 2
+                                                            <label className="label" htmlFor="min calorie">
+                                                                Minimum calorie
                                                             </label>
                                                             <input
                                                                 type="text"
                                                                 className="form-control"
-                                                                name="meal2"
-                                                                id="meal2"
-                                                                placeholder="Meal 2"
-                                                                value={meal2}
+                                                                name="min"
+                                                                id="min"
+                                                                placeholder="Minimum calorie"
+                                                                value={min}
                                                                 onChange={(event)=>{
-                                                                    setMeal2(event.target.value)
+                                                                    setMin(event.target.value)
                                                                 }}
                                                             />
                                                         </div>
                                                     </div>
                                                     <div className="col-md-12">
                                                         <div className="form-group">
-                                                            <label className="label" htmlFor="meal3">
-                                                                Meal 3
+                                                            <label className="label" htmlFor="max calorie">
+                                                                Maximum calorie
                                                             </label>
                                                             <input
                                                                 type="text"
                                                                 className="form-control"
-                                                                name="meal3"
-                                                                id="meal3"
-                                                                placeholder="Meal 3"
-                                                                value={meal3}
+                                                                name="max"
+                                                                id="max"
+                                                                placeholder="Maximum calorie"
+                                                                value={max}
                                                                 onChange={(event)=>{
-                                                                    setMeal3(event.target.value)
+                                                                    setMax(event.target.value)
                                                                 }}
                                                             />
                                                         </div>

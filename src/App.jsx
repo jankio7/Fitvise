@@ -21,6 +21,7 @@ import AddSubscription from "./components/admin/dietplans/AddSubscription"
 import ManageSubscription from "./components/admin/dietplans/ManageSubscription"
 import AddUsers from "./components/admin/dietplans/AddUsers"
 import ManageUsers from "./components/admin/dietplans/ManageUsers"
+import AddDietdetails from "./components/admin/dietplans/AddDietdetails"
 
 
 
@@ -51,6 +52,7 @@ function App() {
               <Route path="subscription/manage" element={<ManageSubscription/>}/>
               <Route path="users/add" element={<AddUsers/>}/>
               <Route path="users/manage" element={<ManageUsers/>}/>
+              <Route path="dietdetails/add" element={<AddDietdetails/>}/>
             </Route>
           <Route path="/*" element={<Error/>}/>
         </Routes>

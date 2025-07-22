@@ -5,10 +5,11 @@ import { toast } from "react-toastify"
 
 
 export default function AddSubscription(){
-    const [title, setTitle]=useState("")
-    const [type, setType]=useState("")
-    const [price, setPrice]=useState("")
-    const [description, setDescription]=useState("")
+    const [userdetails, setUserdetails]=useState("")
+    const [payment, setPayment]=useState("")
+    const [goals, setGoals]=useState("")
+    const [date, setDate]=useState("")
+    const [item, setItem]=useState("")
     const handleForm=async(event)=>{
         event.preventDefault()
         saveData()
@@ -16,20 +17,22 @@ export default function AddSubscription(){
     const saveData=async ()=>{
             try{ 
                 let data={
-                    title,
-                    type,
-                    price,
-                    description,
+                    userdetails,
+                    payment,
+                    goals,
+                    date,
+                    item,
                     status:true,
                     createdAt:Timestamp.now()
                 }
                 console.log(data);
                 await addDoc(collection(db, "subscription"),data)
                 toast.success("Subscription added successfully")
-                setTitle("")
-                setType("")
-                setPrice("")
-                setDescription("")
+                setUserdetails("")
+                setPayment("")
+                setGoals("")
+                setDate("")
+                setItem("")
             }
             catch(error){
                 toast.error(error.message)
@@ -81,70 +84,90 @@ export default function AddSubscription(){
                                                 <div className="row">
                                                     <div className="col-md-12">
                                                         <div className="form-group">
-                                                            <label className="label" htmlFor="title">
-                                                                Title
+                                                            <label className="label" htmlFor="userdetails">
+                                                                User details
                                                             </label>
                                                             <input
                                                                 type="text"
                                                                 className="form-control"
-                                                                name="title"
-                                                                id="title"
-                                                                placeholder="Title"
-                                                                value={title}
+                                                                name="userdetails"
+                                                                id="userdetails"
+                                                                placeholder="User details"
+                                                                value={userdetails}
                                                                 onChange={(event)=>{
-                                                                    setTitle(event.target.value)
+                                                                    setUserdetails(event.target.value)
                                                                 }}
                                                             />
                                                         </div>
                                                     </div>
                                                     <div className="col-md-12">
                                                         <div className="form-group">
-                                                            <label className="label" htmlFor="type">
-                                                            Type  
-                                                            </label>
-                                                            <select value={type} onChange={(event)=>{
-                                                                setType(event.target.value)
-                                                            }}className="form-control">
-                                                                <option value={""} disabled selected>Select</option>
-                                                                <option>Weight loss</option>
-                                                                <option>Weight gain</option>
-                                                                <option>PCOS recovery</option>
-                                                            </select>
-                                                       
-                                                        </div>
-                                                    </div>
-                                                    <div className="col-md-12">
-                                                        <div className="form-group">
-                                                            <label className="label" htmlFor="price">
-                                                                Price
+                                                            <label className="label" htmlFor="payment">
+                                                                Payment
                                                             </label>
                                                             <input
-                                                                type="number"
+                                                                type="text"
                                                                 className="form-control"
-                                                                name="price"
-                                                                id="price"
-                                                                placeholder="Price"
-                                                                value={price}
+                                                                name="payment"
+                                                                id="payment"
+                                                                placeholder="Payment"
+                                                                value={payment} 
                                                                 onChange={(event)=>{
-                                                                    setPrice(event.target.value)
+                                                                    setPayment(event.target.value)
                                                                 }}
                                                             />
                                                         </div>
                                                     </div>
                                                     <div className="col-md-12">
                                                         <div className="form-group">
-                                                            <label className="label" htmlFor="desc">
-                                                                Description
+                                                            <label className="label" htmlFor="goal">
+                                                                Goals
                                                             </label>
                                                             <input
                                                                 type="text"
                                                                 className="form-control"
-                                                                name="desc"
-                                                                id="desc"
-                                                                placeholder="Description"
-                                                                value={description}
+                                                                name="goals"
+                                                                id="goals"
+                                                                placeholder="Goals"
+                                                                value={goals}
                                                                 onChange={(event)=>{
-                                                                    setDescription(event.target.value)
+                                                                    setGoals(event.target.value)
+                                                                }}
+                                                            />
+                                                        </div>
+                                                    </div>
+                                                    <div className="col-md-12">
+                                                        <div className="form-group">
+                                                            <label className="label" htmlFor="date">
+                                                                Date
+                                                            </label>
+                                                            <input
+                                                                type="text"
+                                                                className="form-control"
+                                                                name="date"
+                                                                id="date"
+                                                                placeholder="Date"
+                                                                value={date}
+                                                                onChange={(event)=>{
+                                                                    setDate(event.target.value)
+                                                                }}
+                                                            />
+                                                        </div>
+                                                    </div>
+                                                    <div className="col-md-12">
+                                                        <div className="form-group">
+                                                            <label className="label" htmlFor="item">
+                                                                Item
+                                                            </label>
+                                                            <input
+                                                                type="text"
+                                                                className="form-control"
+                                                                name="item"
+                                                                id="item"
+                                                                placeholder="Item"
+                                                                value={item}
+                                                                onChange={(event)=>{
+                                                                    setItem(event.target.value)
                                                                 }}
                                                             />
                                                         </div>
