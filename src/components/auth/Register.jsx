@@ -11,8 +11,8 @@ import  { useNavigate } from "react-router-dom"
     const [password, setPassword]=useState("")
     const [contact, setContact]=useState("")
     const [gender, setGender]=useState("")
-    const [goals, setGoals]=useState("")
     const [age, setAge]=useState("")
+    const [goals, setGoals]=useState("")
     const nav=useNavigate()
     const handleForm=(event)=>{
         event.preventDefault()
@@ -32,8 +32,8 @@ import  { useNavigate } from "react-router-dom"
                email:email,
                contact:contact,
                gender,
-               goals,
                age,
+               goals,
                userType:3,
                userId:userId,
                status:true,
@@ -206,25 +206,6 @@ import  { useNavigate } from "react-router-dom"
                                                 <div className="col-md-12">
                                                     <div className="form-group">
                                                     <label className="label" htmlFor="subject">
-                                                        Goals
-                                                    </label>
-                                                    <input
-                                                        type="text"
-                                                        className="form-control"
-                                                        name="goala"
-                                                        id="subject"
-                                                        placeholder="Goals"
-                                                        required
-                                                        value={goals}
-                                                        onChange={(event)=>{
-                                                            setGoals(event.target.value)
-                                                        }}
-                                                    />
-                                                    </div>
-                                                </div>
-                                                <div className="col-md-12">
-                                                    <div className="form-group">
-                                                    <label className="label" htmlFor="subject">
                                                         Age
                                                     </label>
                                                     <input
@@ -237,6 +218,25 @@ import  { useNavigate } from "react-router-dom"
                                                         value={age}
                                                         onChange={(event)=>{
                                                             setAge(event.target.value)
+                                                        }}
+                                                    />
+                                                    </div>
+                                                </div>
+                                                <div className="col-md-12">
+                                                    <div className="form-group">
+                                                    <label className="label" htmlFor="subject">
+                                                        Goals
+                                                    </label>
+                                                    <input
+                                                        type="text"
+                                                        className="form-control"
+                                                        name="goala"
+                                                        id="subject"
+                                                        placeholder="Goals"
+                                                        required
+                                                        value={goals}
+                                                        onChange={(event)=>{
+                                                            setGoals(event.target.value)
                                                         }}
                                                     />
                                                     </div>

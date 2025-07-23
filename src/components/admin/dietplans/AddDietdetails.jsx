@@ -8,7 +8,7 @@ export default function AddDietdetails(){
     const [diet, setDiet]=useState("")
     const [day, setDay]=useState("")
     const [meal, setMeal]=useState("")
-    const [duration, setDuration]=useState("")
+    const [time, setTime]=useState("")
     const [item, setItem]=useState("")
     const [quantity, setQuantity]=useState("")
     const [calorie, setCalorie]=useState("")
@@ -43,7 +43,7 @@ export default function AddDietdetails(){
                         diet,
                         day,
                         meal,
-                        duration,
+                        time,
                         item,
                         quantity,
                         calorie,
@@ -62,7 +62,7 @@ export default function AddDietdetails(){
                     setDiet("")
                     setDay("")
                     setMeal("")
-                    setDuration("")
+                    setTime("")
                     setItem("")
                     setQuantity("")
                     setCalorie("")
@@ -183,18 +183,18 @@ export default function AddDietdetails(){
                                                     </div>
                                                     <div className="col-md-12">
                                                         <div className="form-group">
-                                                            <label className="label" htmlFor="duration">
-                                                                Duration
+                                                            <label className="label" htmlFor="time">
+                                                                time
                                                             </label>
                                                             <input
                                                                 type="text"
                                                                 className="form-control"
-                                                                name="duration"
-                                                                id="duration"
-                                                                placeholder="Duration"
-                                                                value={duration}
+                                                                name="time"
+                                                                id="time"
+                                                                placeholder="Time"
+                                                                value={time}
                                                                 onChange={(event)=>{
-                                                                    setDuration(event.target.value)
+                                                                    setTime(event.target.value)
                                                                 }}
                                                             />
                                                         </div>
