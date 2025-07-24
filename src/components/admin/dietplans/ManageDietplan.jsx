@@ -1,7 +1,8 @@
-import { collection, onSnapshot, query } from "firebase/firestore"
+import { collection, deleteDoc, doc, onSnapshot, query } from "firebase/firestore"
 import { useEffect, useState } from "react"
 import { Link } from "react-router-dom"
 import { db } from "../../../Firebase"
+import { toast } from "react-toastify"
 export default function ManageDietplan(){
     const [dietplans, setDietplans]=useState([])
     const fetchData=()=>{
@@ -15,6 +16,10 @@ export default function ManageDietplan(){
     useEffect(()=>{
         fetchData()
     },[])
+    const DeleteDietplans= async(DietplanId)=>{
+        await deleteDoc(doc(db,"dietplans", DietplanId))
+        toast.success("Diet plan deleted")
+    }
     return(
         <>
         <section
@@ -55,6 +60,7 @@ export default function ManageDietplan(){
                                 <th>Goals</th>
                                 <th>Title</th>
                                 <th>Actions</th>
+                                <th>Delete</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -65,11 +71,14 @@ export default function ManageDietplan(){
                                         <td>{el?.goals}</td>
                                         <td>{el?.title}</td>
                                         <td>{el?.actions}</td>
+                                        <td><button className="btn btn-danger" onClick={()=>{
+                                            DeleteDietplans(el.id)
+                                        }}>Delete</button></td>
                                     </tr>
                                 )
                             })}
                         </tbody>
-                    </table>
+                    </table> 
                 </div>
             </div>
         </div>

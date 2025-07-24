@@ -26,7 +26,7 @@ export default function AddUsers(){
                 }
                 console.log(data);
                 await addDoc(collection(db, "users"),data)
-                toast.success("Subscription added successfully")
+                toast.success("User added successfully")
                 setName("")
                 setEmail("")
                 setContact("")

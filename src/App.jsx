@@ -15,13 +15,15 @@ import Login from "./components/auth/Login"
 import Register from "./components/auth/Register"
 import { ToastContainer } from "react-toastify"
 import AdminLayout from "./components/Layouts/AdminLayout"
-import AddDietplan from "./components/admin/dietplans/Adddietplan"
+import AddDietplan from "./components/admin/dietplans/AddDietplan"
 import ManageDietplan from "./components/admin/dietplans/ManageDietplan"
 import AddSubscription from "./components/admin/dietplans/AddSubscription"
 import ManageSubscription from "./components/admin/dietplans/ManageSubscription"
 import AddUsers from "./components/admin/dietplans/AddUsers"
 import ManageUsers from "./components/admin/dietplans/ManageUsers"
 import AddDietdetails from "./components/admin/dietplans/AddDietdetails"
+import ManageDietdetails from "./components/admin/dietplans/ManageDietdetails"
+
 
 
 
@@ -53,6 +55,7 @@ function App() {
               <Route path="users/add" element={<AddUsers/>}/>
               <Route path="users/manage" element={<ManageUsers/>}/>
               <Route path="dietdetails/add" element={<AddDietdetails/>}/>
+              <Route path="dietdetails/manage" element={<ManageDietdetails/>}/>
             </Route>
           <Route path="/*" element={<Error/>}/>
         </Routes>

@@ -14,7 +14,7 @@ export default function AddDietdetails(){
     const [calorie, setCalorie]=useState("")
     const [recipe, setRecipe]=useState("")
     const [protein, setProtein]=useState("") 
-    const [carbs, setCarbs]=useState("")
+    const [carbohydrates, setCarbohydrates]=useState("")
     const [fats, setFats]=useState("")
     const [fibre, setFibre]=useState("")
     const [sugar, setSugar]=useState("")
@@ -49,7 +49,7 @@ export default function AddDietdetails(){
                         calorie,
                         recipe,
                         protein,
-                        carbs,
+                        carbohydrates,
                         fats,
                         fibre,
                         sugar,
@@ -68,7 +68,7 @@ export default function AddDietdetails(){
                     setCalorie("")
                     setRecipe("")
                     setProtein("")
-                    setCarbs("")
+                    setCarbohydrates("")
                     setFats("")
                     setFibre("")
                     setSugar("")
@@ -291,18 +291,18 @@ export default function AddDietdetails(){
                                                     </div>
                                                     <div className="col-md-12">
                                                         <div className="form-group">
-                                                            <label className="label" htmlFor="carbs">
-                                                                Carbs
+                                                            <label className="label" htmlFor="carbohydrates">
+                                                                Carbohydrates
                                                             </label>
                                                             <input
                                                                 type="text"
                                                                 className="form-control"
-                                                                name="carbs"
-                                                                id="carbs"
-                                                                placeholder="Carbs"
-                                                                value={carbs}
+                                                                name="carbohydrates"
+                                                                id="carbohydrates"
+                                                                placeholder="Carbohydrates"
+                                                                value={carbohydrates}
                                                                 onChange={(event)=>{
-                                                                    setCarbs(event.target.value)
+                                                                    setCarbohydrates(event.target.value)
                                                                 }}
                                                             />
                                                         </div>

@@ -1,13 +1,14 @@
-import { collection, onSnapshot, query } from "firebase/firestore"
+import { collection, deleteDoc, doc, onSnapshot, query } from "firebase/firestore"
 import { useEffect, useState } from "react"
 import { Link } from "react-router-dom"
 import { db } from "../../../Firebase"
+import { toast } from "react-toastify"
 export default function ManageUsers(){
     const [users, setUsers]=useState([])
             const fetchData=()=>{
                 let q= query(collection(db,"users"))
             onSnapshot(q,(usersCol)=>{
-                setSubscription(usersCol.docs?.map((el)=>{
+                setUsers(usersCol.docs?.map((el)=>{
                     return {...el.data(), id:el.id};
                 }))
             })
@@ -15,6 +16,10 @@ export default function ManageUsers(){
             useEffect(()=>{
                 fetchData()
             },[])
+            const DeleteUsers=async(UsersId)=>{
+                await deleteDoc(doc(db,"users", UsersId))
+                toast.success("User deleted successfully")
+            }
     return(
         <>
         <section
@@ -57,6 +62,7 @@ export default function ManageUsers(){
                                         <th>Contact</th>
                                         <th>Goals</th>
                                         <th>Actions</th>
+                                        <th>Delete</th>
                                     </tr>
                                 </thead>
                                 <tbody>
@@ -69,6 +75,9 @@ export default function ManageUsers(){
                                                 <td>{el?.contact}</td>
                                                 <td>{el?.goals}</td>
                                                 <td>{el?.actions}</td>
+                                                <td><button className="btn btn-danger" onClick={()=>{
+                                                    DeleteUsers(el.id)
+                                                }}>Delete</button></td>
                                             </tr>
                                         )
                                     })}

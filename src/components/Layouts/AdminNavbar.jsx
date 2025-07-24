@@ -126,7 +126,7 @@ export default function AdminNavbar(){
                             </Link>
                         </li>
                         <li className="nav-item">
-                            <Link to="/admin/dietdetails/add" className="nav-link">
+                            <Link to="/admin/dietdetails/manage" className="nav-link">
                               Diet details
                             </Link>
                         </li>

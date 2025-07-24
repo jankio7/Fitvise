@@ -1,7 +1,8 @@
-import { collection, onSnapshot, query } from "firebase/firestore"
+import { collection, deleteDoc, doc, onSnapshot, query } from "firebase/firestore"
 import { useEffect, useState } from "react"
 import { Link } from "react-router-dom"
 import { db } from "../../../Firebase"
+import { toast } from "react-toastify"
 export default function ManageSubscription(){
     const [subscription, setSubscription]=useState([])
         const fetchData=()=>{
@@ -15,6 +16,10 @@ export default function ManageSubscription(){
         useEffect(()=>{
             fetchData()
         },[])
+        const DeleteSubscription=async(SubscriptionId)=>{
+            await deleteDoc(doc(db,"subscription",SubscriptionId))
+            toast.success("Subscription deleted successfully")
+        }
     return(
         <>
         <section
@@ -36,7 +41,7 @@ export default function ManageSubscription(){
                     Subscription <i className="ion-ios-arrow-forward" />
                     </span>
                 </p>
-                <h1 className="mb-0 bread">Diet plan</h1>
+                <h1 className="mb-0 bread">Subscription</h1>
                 </div>
             </div>
             </div>
@@ -57,6 +62,7 @@ export default function ManageSubscription(){
                                         <th>Goals</th>
                                         <th>Date</th>
                                         <th>Item</th>
+                                        <th>Delete</th>
                                     </tr>
                                 </thead>
                                 <tbody>
@@ -69,6 +75,9 @@ export default function ManageSubscription(){
                                                 <td>{el?.goals}</td>
                                                 <td>{el?.date}</td>
                                                 <td>{el?.item}</td>
+                                                <td><button className="btn btn-danger" onClick={()=>{
+                                                    DeleteSubscription(el.id)
+                                                }}>Delete</button></td>
                                             </tr>
                                         )
                                     })}
