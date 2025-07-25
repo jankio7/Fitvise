@@ -63,6 +63,7 @@ export default function ManageSubscription(){
                                         <th>Date</th>
                                         <th>Item</th>
                                         <th>Delete</th>
+                                        <th>Update</th>
                                     </tr>
                                 </thead>
                                 <tbody>
@@ -78,6 +79,7 @@ export default function ManageSubscription(){
                                                 <td><button className="btn btn-danger" onClick={()=>{
                                                     DeleteSubscription(el.id)
                                                 }}>Delete</button></td>
+                                                <td><Link to={`/admin/subscription/update/${el.id}`} className="btn btn-success">Update</Link></td>
                                             </tr>
                                         )
                                     })}

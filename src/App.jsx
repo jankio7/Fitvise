@@ -23,6 +23,10 @@ import AddUsers from "./components/admin/dietplans/AddUsers"
 import ManageUsers from "./components/admin/dietplans/ManageUsers"
 import AddDietdetails from "./components/admin/dietplans/AddDietdetails"
 import ManageDietdetails from "./components/admin/dietplans/ManageDietdetails"
+import UpdateDietplan from "./components/admin/dietplans/UpdateDietplan"
+import UpdateDietdetails from "./components/admin/dietplans/UpdateDietdetails"
+import UpdateSubscription from "./components/admin/dietplans/UpdateSubscription"
+
 
 
 
@@ -50,12 +54,15 @@ function App() {
             <Route path="/admin" element={<AdminLayout/>}>
               <Route path="dietplans/add" element={<AddDietplan/>}/>
               <Route path="dietplans/manage" element={<ManageDietplan/>}/>
+              <Route path="dietplans/update/:id" element={<UpdateDietplan/>}/>
               <Route path="subscription/add" element={<AddSubscription/>}/>
               <Route path="subscription/manage" element={<ManageSubscription/>}/>
+              <Route path="subscripiton/update/:id" element={<UpdateSubscription/>}/>
               <Route path="users/add" element={<AddUsers/>}/>
               <Route path="users/manage" element={<ManageUsers/>}/>
               <Route path="dietdetails/add" element={<AddDietdetails/>}/>
               <Route path="dietdetails/manage" element={<ManageDietdetails/>}/>
+              <Route path="dietdetails/update/:id" element={<UpdateDietdetails/>}/>
             </Route>
           <Route path="/*" element={<Error/>}/>
         </Routes>

@@ -63,6 +63,7 @@ export default function ManageUsers(){
                                         <th>Goals</th>
                                         <th>Actions</th>
                                         <th>Delete</th>
+                                        <th>Update</th>
                                     </tr>
                                 </thead>
                                 <tbody>
@@ -78,6 +79,7 @@ export default function ManageUsers(){
                                                 <td><button className="btn btn-danger" onClick={()=>{
                                                     DeleteUsers(el.id)
                                                 }}>Delete</button></td>
+                                                
                                             </tr>
                                         )
                                     })}

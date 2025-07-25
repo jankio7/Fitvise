@@ -61,6 +61,7 @@ export default function ManageDietplan(){
                                 <th>Title</th>
                                 <th>Actions</th>
                                 <th>Delete</th>
+                                <th>Update</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -74,6 +75,7 @@ export default function ManageDietplan(){
                                         <td><button className="btn btn-danger" onClick={()=>{
                                             DeleteDietplans(el.id)
                                         }}>Delete</button></td>
+                                        <td><Link to={`/admin/dietplans/update/${el.id}`} className="btn btn-success">Update</Link></td>
                                     </tr>
                                 )
                             })}

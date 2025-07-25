@@ -53,7 +53,7 @@ export default function ManageDietdetails(){
                         <Link to={"/admin/dietdetails/add"} className="btn btn-outline-primary">Add New +</Link>
                     </div>
                     <h3>Manage Diet plans</h3>
-                    {/* <table className="table table-hover table-striped">
+                    <table className="table table-hover table-striped">
                         <thead className="table-dark">
                             <tr>
                                 <th>Sr No.</th>
@@ -72,6 +72,7 @@ export default function ManageDietdetails(){
                                 <th>Sugar</th>
                                 <th>Image</th>
                                 <th>Delete</th>
+                                <th>Update</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -96,12 +97,13 @@ export default function ManageDietdetails(){
                                         <td><button className="btn btn-danger" onClick={()=>{
                                             DeleteDietdetails(el.id)
                                         }}>Delete</button></td>
+                                        <td><Link to={`/admin/dietdetails/update/${el.id}`} className="btn btn-success">Update</Link></td>
                                     </tr>
                                 )
                             })}
                         </tbody>
-                    </table> */}
-                <div className="row">
+                    </table>
+                {/* <div className="row">
                     {
                         dietdetails.map((el)=>{
                             return(
@@ -124,7 +126,7 @@ export default function ManageDietdetails(){
                             </div>)
                         })
                     }
-                </div>
+                </div> */}
                 </div>
             </div>
         </div>
