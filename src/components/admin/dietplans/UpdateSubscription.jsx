@@ -15,7 +15,7 @@ export default function UpdateSubscription(){
     const {id}=useParams()
     useEffect(()=>{
         const fetchData=()=>{
-            onSnapshot (doc(db,"subscription",id),(SubscriptionData)=>{
+            onSnapshot(doc(db,"subscription",id),(SubscriptionData)=>{
                 const FillData=SubscriptionData.data()
                 setUserdetails(FillData.userdetails)
                 setPayment(FillData.payment)
@@ -25,8 +25,9 @@ export default function UpdateSubscription(){
             })
         }
         fetchData()
-        console.log(id);
+        //console.log(id);
     },[])
+    
     const handleForm=async(event)=>{
         event.preventDefault()
         saveData()
@@ -43,7 +44,7 @@ export default function UpdateSubscription(){
                     createdAt:Timestamp.now()
                 }
                 //console.log(data);
-                await updateDoc(doc(db, "subscription"),data)
+                await updateDoc(doc(db, "subscription",id),data)
                 toast.success("Subscription updated successfully")
                 setUserdetails("")
                 setPayment("")

@@ -31,6 +31,7 @@ import UpdateSubscription from "./components/admin/dietplans/UpdateSubscription"
 
 
 
+
 function App() {
 
   return (
@@ -57,7 +58,7 @@ function App() {
               <Route path="dietplans/update/:id" element={<UpdateDietplan/>}/>
               <Route path="subscription/add" element={<AddSubscription/>}/>
               <Route path="subscription/manage" element={<ManageSubscription/>}/>
-              <Route path="subscripiton/update/:id" element={<UpdateSubscription/>}/>
+              <Route path="subscription/update/:id" element={<UpdateSubscription/>}/>
               <Route path="users/add" element={<AddUsers/>}/>
               <Route path="users/manage" element={<ManageUsers/>}/>
               <Route path="dietdetails/add" element={<AddDietdetails/>}/>
