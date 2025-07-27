@@ -37,8 +37,8 @@ function Coach(){
                       />
                     </div>
                     <div className="text pt-3 px-3 pb-4 text-center">
-                      <h3>Lloyd Wilson</h3>
-                      <span className="position mb-2">Health Coach</span>
+                      {/* <h3>Lloyd Wilson</h3> */}
+                      {/* <span className="position mb-2">Health Coach</span> */}
                       <div className="faded">
                         <p>
                           I am an ambitious workaholic, but apart from that, pretty
@@ -91,8 +91,8 @@ function Coach(){
                       />
                     </div>
                     <div className="text pt-3 px-3 pb-4 text-center">
-                      <h3>Rachel Parker</h3>
-                      <span className="position mb-2">Life &amp; Business Coach</span>
+                      {/* <h3>Rachel Parker</h3> */}
+                      {/* <span className="position mb-2">Life &amp; Business Coach</span> */}
                       <div className="faded">
                         <p>
                           I am an ambitious workaholic, but apart from that, pretty
@@ -145,8 +145,8 @@ function Coach(){
                       />
                     </div>
                     <div className="text pt-3 px-3 pb-4 text-center">
-                      <h3>Ian Smith</h3>
-                      <span className="position mb-2">Executive Coach</span>
+                      {/* <h3>Ian Smith</h3>
+                      <span className="position mb-2">Executive Coach</span> */}
                       <div className="faded">
                         <p>
                           I am an ambitious workaholic, but apart from that, pretty
@@ -199,8 +199,8 @@ function Coach(){
                       />
                     </div>
                     <div className="text pt-3 px-3 pb-4 text-center">
-                      <h3>Alicia Henderson</h3>
-                      <span className="position mb-2">Health Coach</span>
+                      {/* <h3>Alicia Henderson</h3>
+                      <span className="position mb-2">Health Coach</span> */}
                       <div className="faded">
                         <p>
                           I am an ambitious workaholic, but apart from that, pretty
@@ -253,8 +253,8 @@ function Coach(){
                       />
                     </div>
                     <div className="text pt-3 px-3 pb-4 text-center">
-                      <h3>Lloyd Wilson</h3>
-                      <span className="position mb-2">Executive Coach</span>
+                      {/* <h3>Lloyd Wilson</h3>
+                      <span className="position mb-2">Executive Coach</span> */}
                       <div className="faded">
                         <p>
                           I am an ambitious workaholic, but apart from that, pretty
@@ -307,8 +307,8 @@ function Coach(){
                       />
                     </div>
                     <div className="text pt-3 px-3 pb-4 text-center">
-                      <h3>Rachel Parker</h3>
-                      <span className="position mb-2">Health Coach</span>
+                      {/* <h3>Rachel Parker</h3>
+                      <span className="position mb-2">Health Coach</span> */}
                       <div className="faded">
                         <p>
                           I am an ambitious workaholic, but apart from that, pretty
@@ -361,8 +361,8 @@ function Coach(){
                       />
                     </div>
                     <div className="text pt-3 px-3 pb-4 text-center">
-                      <h3>Ian Smith</h3>
-                      <span className="position mb-2">Health Coach</span>
+                      {/* <h3>Ian Smith</h3>
+                      <span className="position mb-2">Health Coach</span> */}
                       <div className="faded">
                         <p>
                           I am an ambitious workaholic, but apart from that, pretty
@@ -415,8 +415,8 @@ function Coach(){
                       />
                     </div>
                     <div className="text pt-3 px-3 pb-4 text-center">
-                      <h3>Fred Henderson</h3>
-                      <span className="position mb-2">Executive Coach</span>
+                      {/* <h3>Fred Henderson</h3>
+                      <span className="position mb-2">Executive Coach</span> */}
                       <div className="faded">
                         <p>
                           I am an ambitious workaholic, but apart from that, pretty

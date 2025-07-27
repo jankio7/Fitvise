@@ -36,7 +36,7 @@ export default function Successstories(){
                     />
                     <div className="text pl-md-5">
                       <h4>
-                        Story About: <span>John Doe</span>
+                        About: <span>Fitvise</span>
                       </h4>
                       <p>
                         Fitvise is a comprehensive fitness platform that provides personalized workout plans, nutrition advice, and progress tracking. It empowers users to achieve their health goals through data-driven insights, expert guidance, and a supportive fitness community.
@@ -55,7 +55,7 @@ export default function Successstories(){
                     />
                     <div className="text pl-md-5">
                       <h4>
-                        Story About: <span>John Doe</span>
+                         About: <span>Fitvise</span>
                       </h4>
                       <p>
                         Fitvise is a comprehensive fitness platform that provides personalized workout plans, nutrition advice, and progress tracking. It empowers users to achieve their health goals through data-driven insights, expert guidance, and a supportive fitness community.
@@ -74,7 +74,7 @@ export default function Successstories(){
                     />
                     <div className="text pl-md-5">
                       <h4>
-                        Story About: <span>John Doe</span>
+                        About: <span>Fitvise</span>
                       </h4>
                       <p>
                         Fitvise is a comprehensive fitness platform that provides personalized workout plans, nutrition advice, and progress tracking. It empowers users to achieve their health goals through data-driven insights, expert guidance, and a supportive fitness community.
@@ -93,7 +93,7 @@ export default function Successstories(){
                     />
                     <div className="text pl-md-5">
                       <h4>
-                        Story About: <span>John Doe</span>
+                         About: <span>Fitvise</span>
                       </h4>
                       <p>
                         Fitvise is a comprehensive fitness platform that provides personalized workout plans, nutrition advice, and progress tracking. It empowers users to achieve their health goals through data-driven insights, expert guidance, and a supportive fitness community.
@@ -112,7 +112,7 @@ export default function Successstories(){
                     />
                     <div className="text pl-md-5">
                       <h4>
-                        Story About: <span>John Doe</span>
+                         About: <span>Fitvise</span>
                       </h4>
                       <p>
                         Fitvise is a comprehensive fitness platform that provides personalized workout plans, nutrition advice, and progress tracking. It empowers users to achieve their health goals through data-driven insights, expert guidance, and a supportive fitness community.
