@@ -34,8 +34,7 @@ export default function Footer(){
                         </a>
                       </h2>
                       <p>
-                        A small river named Duden flows by their place and supplies it
-                        with the necessary regelialia.
+                        Fitvise offers tailored fitness plans, nutrition advice, progress tracking and a supportive community for users.
                       </p>
                       <a href="#">
                         read more <span className="ion-ios-arrow-round-forward" />
@@ -151,11 +150,9 @@ export default function Footer(){
               <div className="row mt-5">
                 <div className="col-md-6 col-lg-8">
                   <p className="copyright">
-                    Copyright © All rights reserved | This template is made with{" "}
+                    Copyright © All rights reserved {" "}
                     <i className="fa fa-heart" aria-hidden="true" /> by{" "}
-                    <a href="https://colorlib.com" target="_blank">
                       Lovepreet
-                    </a>
                   </p>
                 </div>
                 <div className="col-md-6 col-lg-4 text-md-right">

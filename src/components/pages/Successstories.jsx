@@ -39,9 +39,7 @@ export default function Successstories(){
                         Story About: <span>John Doe</span>
                       </h4>
                       <p>
-                        A small river named Duden flows by their place and supplies it
-                        with the necessary regelialia. It is a paradisematic country, in
-                        which roasted parts of sentences fly into your mouth.
+                        Fitvise is a comprehensive fitness platform that provides personalized workout plans, nutrition advice, and progress tracking. It empowers users to achieve their health goals through data-driven insights, expert guidance, and a supportive fitness community.
                       </p>
                       <p>
                         <a href="#" className="btn btn-primary">
@@ -60,9 +58,7 @@ export default function Successstories(){
                         Story About: <span>John Doe</span>
                       </h4>
                       <p>
-                        A small river named Duden flows by their place and supplies it
-                        with the necessary regelialia. It is a paradisematic country, in
-                        which roasted parts of sentences fly into your mouth.
+                        Fitvise is a comprehensive fitness platform that provides personalized workout plans, nutrition advice, and progress tracking. It empowers users to achieve their health goals through data-driven insights, expert guidance, and a supportive fitness community.
                       </p>
                       <p>
                         <a href="#" className="btn btn-primary">
@@ -81,9 +77,7 @@ export default function Successstories(){
                         Story About: <span>John Doe</span>
                       </h4>
                       <p>
-                        A small river named Duden flows by their place and supplies it
-                        with the necessary regelialia. It is a paradisematic country, in
-                        which roasted parts of sentences fly into your mouth.
+                        Fitvise is a comprehensive fitness platform that provides personalized workout plans, nutrition advice, and progress tracking. It empowers users to achieve their health goals through data-driven insights, expert guidance, and a supportive fitness community.
                       </p>
                       <p>
                         <a href="#" className="btn btn-primary">
@@ -102,9 +96,7 @@ export default function Successstories(){
                         Story About: <span>John Doe</span>
                       </h4>
                       <p>
-                        A small river named Duden flows by their place and supplies it
-                        with the necessary regelialia. It is a paradisematic country, in
-                        which roasted parts of sentences fly into your mouth.
+                        Fitvise is a comprehensive fitness platform that provides personalized workout plans, nutrition advice, and progress tracking. It empowers users to achieve their health goals through data-driven insights, expert guidance, and a supportive fitness community.
                       </p>
                       <p>
                         <a href="#" className="btn btn-primary">
@@ -123,9 +115,7 @@ export default function Successstories(){
                         Story About: <span>John Doe</span>
                       </h4>
                       <p>
-                        A small river named Duden flows by their place and supplies it
-                        with the necessary regelialia. It is a paradisematic country, in
-                        which roasted parts of sentences fly into your mouth.
+                        Fitvise is a comprehensive fitness platform that provides personalized workout plans, nutrition advice, and progress tracking. It empowers users to achieve their health goals through data-driven insights, expert guidance, and a supportive fitness community.
                       </p>
                       <p>
                         <a href="#" className="btn btn-primary">
@@ -331,10 +321,7 @@ export default function Successstories(){
                   <div className="sidebar-box ftco-animate">
                     <h3>Paragraph</h3>
                     <p>
-                      Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ducimus
-                      itaque, autem necessitatibus voluptate quod mollitia delectus aut,
-                      sunt placeat nam vero culpa sapiente consectetur similique,
-                      inventore eos fugit cupiditate numquam!
+                      Fitvise is a comprehensive fitness platform that provides personalized workout plans, nutrition advice, and progress tracking. It empowers users to achieve their health goals through data-driven insights, expert guidance, and a supportive fitness community.
                     </p>
                   </div>
                 </div>

@@ -43,18 +43,10 @@ function About(){
                     </div>
                     <div className="pl-md-5">
                       <p>
-                        A small river named Duden flows by their place and supplies it
-                        with the necessary regelialia. It is a paradisematic country, in
-                        which roasted parts of sentences fly into your mouth. Even the
-                        all-powerful Pointing has no control about the blind texts it is
-                        an almost unorthographic life One day however a small line of
-                        blind text by the name of Lorem Ipsum decided to leave for the far
-                        World of Grammar.
+                        The Fitvise is a health and wellness initiative aimed at promoting a balanced lifestyle through personalized fitness and nutrition guidance. Designed to support individuals of all ages and fitness levels. Fitvise combines expert advice, digital tools, and community support to help users set realistic health goals and track their progress. The project emphasizes holistic well-being by integrating physical activity, diet planning, mental health resources, and regular assessments. With a user-friendly platform and evidence-based strategies. Fitvise encourages sustainable habits, empowering people to take control of their health and achieve long-term fitnes outcomes.
                       </p>
                       <p>
-                        A small river named Duden flows by their place and supplies it
-                        with the necessary regelialia. It is a paradisematic country, in
-                        which roasted parts of sentences fly into your mouth.
+                        Fitvise is a comprehensive fitness platform that provides personalized workout plans, nutrition advice, and progress tracking. It empowers users to achieve their health goals through data-driven insights, expert guidance, and a supportive fitness community.
                       </p>
                       <div className="founder d-flex align-items-center mt-5">
                         <div
@@ -62,8 +54,8 @@ function About(){
                           style={{ backgroundImage: 'url("/assets/images/coach-1.jpg")' }}
                         />
                         <div className="text pl-3">
-                          <h3 className="mb-0">Cythia Hunter</h3>
-                          <span className="position">Personal Dietitian</span>
+                          <h3 className="mb-0">Fitvise</h3>
+                          <span className="position">Fitness Platform</span>
                         </div>
                       </div>
                     </div>
@@ -76,8 +68,8 @@ function About(){
                 <div className="row no-gutters">
                   <div className="col-md-3 d-flex align-items-stretch">
                     <div className="consultation w-100 text-center px-4 px-md-5">
-                      <h3 className="mb-4">Healthcare Services</h3>
-                      <p>A small river named Duden flows by their place and supplies</p>
+                      <h3 className="mb-4">Fitvise Services</h3>
+                      <p>Fitvise offers personalized fitness plans, tracking, and community support.</p>
                       <a href="#" className="btn-custom">
                         See Services
                       </a>
@@ -168,7 +160,7 @@ function About(){
                   <div className="col-md-3 d-flex align-items-stretch">
                     <div className="consultation w-100 text-center px-4 px-md-5">
                       <h3 className="mb-4">Find A Health Expert</h3>
-                      <p>A small river named Duden flows by their place and supplies</p>
+                      <p>Fitvise offers personalized fitness plans, tracking, and community support.</p>
                       <a href="#" className="btn-custom">
                         Meet our health coach
                       </a>
@@ -199,12 +191,9 @@ function About(){
                               <i className="fa fa-quote-left" />
                             </span>
                             <p>
-                              Far far away, behind the word mountains, far from the
-                              countries Vokalia and Consonantia, there live the blind
-                              texts.
+                              Fitvise offers personalized fitness plans, tracking, and community support.
                             </p>
-                            <p className="name">Racky Henderson</p>
-                            <span className="position">Father</span>
+                            <p className="name">Fitvise</p>
                           </div>
                         </div>
                       </div>
@@ -219,12 +208,10 @@ function About(){
                               <i className="fa fa-quote-left" />
                             </span>
                             <p>
-                              Far far away, behind the word mountains, far from the
-                              countries Vokalia and Consonantia, there live the blind
-                              texts.
+                              Fitvise offers personalized fitness plans, tracking, and community support.
                             </p>
-                            <p className="name">Henry Dee</p>
-                            <span className="position">Businesswoman</span>
+                            <p className="name">Fitvise</p>
+                            <span className="position">Fitness Platform</span>
                           </div>
                         </div>
                       </div>
@@ -239,12 +226,10 @@ function About(){
                               <i className="fa fa-quote-left" />
                             </span>
                             <p>
-                              Far far away, behind the word mountains, far from the
-                              countries Vokalia and Consonantia, there live the blind
-                              texts.
+                              Fitvise offers personalized fitness plans, tracking, and community support.
                             </p>
-                            <p className="name">Mark Huff</p>
-                            <span className="position">Businesswoman</span>
+                            <p className="name">Fitvise</p>
+                            <span className="position">Fitness Platform</span>
                           </div>
                         </div>
                       </div>
@@ -259,12 +244,10 @@ function About(){
                               <i className="fa fa-quote-left" />
                             </span>
                             <p>
-                              Far far away, behind the word mountains, far from the
-                              countries Vokalia and Consonantia, there live the blind
-                              texts.
+                              Fitvise offers personalized fitness plans, tracking, and community support.
                             </p>
-                            <p className="name">Rodel Golez</p>
-                            <span className="position">Businesswoman</span>
+                            <p className="name">Fitvise</p>
+                            <span className="position">Fitness Platform</span>
                           </div>
                         </div>
                       </div>
@@ -279,12 +262,10 @@ function About(){
                               <i className="fa fa-quote-left" />
                             </span>
                             <p>
-                              Far far away, behind the word mountains, far from the
-                              countries Vokalia and Consonantia, there live the blind
-                              texts.
+                              Fitvise offers personalized fitness plans, tracking, and community support.
                             </p>
-                            <p className="name">Ken Bosh</p>
-                            <span className="position">Businesswoman</span>
+                            <p className="name">Fitvise</p>
+                            <span className="position">Fitness Platform</span>
                           </div>
                         </div>
                       </div>

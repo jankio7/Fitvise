@@ -63,7 +63,6 @@ export default function ManageUsers(){
                                         <th>Goals</th>
                                         <th>Actions</th>
                                         <th>Delete</th>
-                                        <th>Update</th>
                                     </tr>
                                 </thead>
                                 <tbody>

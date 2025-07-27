@@ -56,10 +56,7 @@ function Blog(){
                         </a>
                       </h3>
                       <p>
-                        Far far away, behind the word mountains, far from the countries
-                        Vokalia and Consonantia, there live the blind texts. Separated
-                        they live in Bookmarksgrove right at the coast of the Semantics,
-                        a large language ocean.
+                        Fitvise is a comprehensive fitness platform that provides personalized workout plans, nutrition advice, and progress tracking. It empowers users to achieve their health goals through data-driven insights, expert guidance, and a supportive fitness community.
                       </p>
                       <p>
                         <a href="#" className="btn btn-primary">
@@ -95,10 +92,7 @@ function Blog(){
                         </a>
                       </h3>
                       <p>
-                        Far far away, behind the word mountains, far from the countries
-                        Vokalia and Consonantia, there live the blind texts. Separated
-                        they live in Bookmarksgrove right at the coast of the Semantics,
-                        a large language ocean.
+                        Fitvise is a comprehensive fitness platform that provides personalized workout plans, nutrition advice, and progress tracking. It empowers users to achieve their health goals through data-driven insights, expert guidance, and a supportive fitness community.
                       </p>
                       <p>
                         <a href="#" className="btn btn-primary">
@@ -134,10 +128,7 @@ function Blog(){
                         </a>
                       </h3>
                       <p>
-                        Far far away, behind the word mountains, far from the countries
-                        Vokalia and Consonantia, there live the blind texts. Separated
-                        they live in Bookmarksgrove right at the coast of the Semantics,
-                        a large language ocean.
+                        Fitvise is a comprehensive fitness platform that provides personalized workout plans, nutrition advice, and progress tracking. It empowers users to achieve their health goals through data-driven insights, expert guidance, and a supportive fitness community.
                       </p>
                       <p>
                         <a href="#" className="btn btn-primary">
@@ -173,10 +164,7 @@ function Blog(){
                         </a>
                       </h3>
                       <p>
-                        Far far away, behind the word mountains, far from the countries
-                        Vokalia and Consonantia, there live the blind texts. Separated
-                        they live in Bookmarksgrove right at the coast of the Semantics,
-                        a large language ocean.
+                        Fitvise is a comprehensive fitness platform that provides personalized workout plans, nutrition advice, and progress tracking. It empowers users to achieve their health goals through data-driven insights, expert guidance, and a supportive fitness community.
                       </p>
                       <p>
                         <a href="#" className="btn btn-primary">
@@ -212,10 +200,7 @@ function Blog(){
                         </a>
                       </h3>
                       <p>
-                        Far far away, behind the word mountains, far from the countries
-                        Vokalia and Consonantia, there live the blind texts. Separated
-                        they live in Bookmarksgrove right at the coast of the Semantics,
-                        a large language ocean.
+                        Fitvise is a comprehensive fitness platform that provides personalized workout plans, nutrition advice, and progress tracking. It empowers users to achieve their health goals through data-driven insights, expert guidance, and a supportive fitness community.
                       </p>
                       <p>
                         <a href="#" className="btn btn-primary">
@@ -251,10 +236,7 @@ function Blog(){
                         </a>
                       </h3>
                       <p>
-                        Far far away, behind the word mountains, far from the countries
-                        Vokalia and Consonantia, there live the blind texts. Separated
-                        they live in Bookmarksgrove right at the coast of the Semantics,
-                        a large language ocean.
+                        Fitvise is a comprehensive fitness platform that provides personalized workout plans, nutrition advice, and progress tracking. It empowers users to achieve their health goals through data-driven insights, expert guidance, and a supportive fitness community.
                       </p>
                       <p>
                         <a href="#" className="btn btn-primary">
@@ -460,10 +442,7 @@ function Blog(){
                   <div className="sidebar-box ftco-animate">
                     <h3>Paragraph</h3>
                     <p>
-                      Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ducimus
-                      itaque, autem necessitatibus voluptate quod mollitia delectus aut,
-                      sunt placeat nam vero culpa sapiente consectetur similique,
-                      inventore eos fugit cupiditate numquam!
+                      The Fitvise is a health and wellness initiative aimed at promoting a balanced lifestyle through personalized fitness and nutrition guidance. Designed to support individuals of all ages and fitness levels. Fitvise combines expert advice, digital tools, and community support to help users set realistic health goals and track their progress. The project emphasizes holistic well-being by integrating physical activity, diet planning, mental health resources, and regular assessments. With a user-friendly platform and evidence-based strategies.
                     </p>
                   </div>
                 </div>
