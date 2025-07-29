@@ -16,7 +16,7 @@ export default function ManageDietdetails(){
     useEffect(()=>{
         fetchData()
     },[])
-    const DeleteDietdetails= async(DietdetailsId)=>{
+    const deleteDietdetails= async(DietdetailsId)=>{
         await deleteDoc(doc(db,"dietdetails", DietdetailsId))
         toast.success("Diet details deleted")
     }
@@ -95,7 +95,7 @@ export default function ManageDietdetails(){
                                         <td>{el?.sugar}</td>
                                         <td>{el?.image}</td>
                                         <td><button className="btn btn-danger" onClick={()=>{
-                                            DeleteDietdetails(el.id)
+                                            deleteDietdetails(el.id)
                                         }}>Delete</button></td>
                                         <td><Link to={`/admin/dietdetails/update/${el.id}`} className="btn btn-success">Update</Link></td>
                                     </tr>

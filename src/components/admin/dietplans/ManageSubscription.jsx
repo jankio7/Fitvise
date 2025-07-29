@@ -16,7 +16,7 @@ export default function ManageSubscription(){
         useEffect(()=>{
             fetchData()
         },[])
-        const DeleteSubscription=async(SubscriptionId)=>{
+        const deleteSubscription=async(SubscriptionId)=>{
             await deleteDoc(doc(db,"subscription",SubscriptionId))
             toast.success("Subscription deleted successfully")
         }
@@ -77,7 +77,7 @@ export default function ManageSubscription(){
                                                 <td>{el?.date}</td>
                                                 <td>{el?.item}</td>
                                                 <td><button className="btn btn-danger" onClick={()=>{
-                                                    DeleteSubscription(el.id)
+                                                    deleteSubscription(el.id)
                                                 }}>Delete</button></td>
                                                 <td><Link to={`/admin/subscription/update/${el.id}`} className="btn btn-success">Update</Link></td>
                                             </tr>

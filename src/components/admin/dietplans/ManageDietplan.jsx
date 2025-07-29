@@ -3,22 +3,43 @@ import { useEffect, useState } from "react"
 import { Link } from "react-router-dom"
 import { db } from "../../../Firebase"
 import { toast } from "react-toastify"
+import { FadeLoader } from "react-spinners"
+import Swal from "sweetalert2"
 export default function ManageDietplan(){
     const [dietplans, setDietplans]=useState([])
+    const [load, setLoad]=useState(true)
     const fetchData=()=>{
         let q= query(collection(db,"dietplans"))
     onSnapshot(q,(dietplansCol)=>{
         setDietplans(dietplansCol.docs?.map((el)=>{
             return {...el.data(), id:el.id};
         }))
+        setLoad(false)
     })
     }
     useEffect(()=>{
         fetchData()
     },[])
-    const DeleteDietplans= async(DietplanId)=>{
-        await deleteDoc(doc(db,"dietplans", DietplanId))
-        toast.success("Diet plan deleted")
+    const DeleteDietplans=(DietplanId)=>{
+        Swal.fire({
+        title: "Are you sure?",
+        text: "You won't be able to revert this!",
+        icon: "warning",
+        showCancelButton: true,
+        confirmButtonColor: "#3085d6",
+        cancelButtonColor: "#d33",
+        confirmButtonText: "Yes, delete it!"
+        }).then(async (result) => {
+          if (result.isConfirmed) {
+            await deleteDoc(doc(db,"dietplans", DietplanId))
+            Swal.fire({
+              title: "Deleted!",
+              text: "Your file has been deleted.",
+              icon: "success"
+            });
+          }
+        });
+
     }
     return(
         <>
@@ -26,7 +47,7 @@ export default function ManageDietplan(){
                 className="hero-wrap hero-wrap-2"
                 style={{ backgroundImage: 'url("/assets/images/bg_2.jpg")' }}
                 data-stellar-background-ratio="0.5"
-            >
+        >
                 <div className="overlay" />
                 <div className="container">
                 <div className="row no-gutters slider-text align-items-end">
@@ -47,6 +68,9 @@ export default function ManageDietplan(){
                 </div>
         </section>
         <div className="container my-5">
+            {load ?
+                <FadeLoader color="#069ad4ff" size={30} cssOverride={{display:"block",margin:"0 auto"}} loading={load}/>
+            :
             <div className="row">
                 <div className="col table-responsive">
                     <div className="d-flex justify-content-end">
@@ -60,8 +84,6 @@ export default function ManageDietplan(){
                                 <th>Goals</th>
                                 <th>Title</th>
                                 <th>Actions</th>
-                                <th>Delete</th>
-                                <th>Update</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -71,11 +93,11 @@ export default function ManageDietplan(){
                                         <td>{index+1}</td>
                                         <td>{el?.goals}</td>
                                         <td>{el?.title}</td>
-                                        <td>{el?.actions}</td>
-                                        <td><button className="btn btn-danger" onClick={()=>{
+                                        <td><Link to={`/admin/dietplans/update/${el.id}`} className="btn btn-primary"><i className="fa fa-edit"></i></Link>
+                                        <button className="btn btn-outline-danger mx-2" onClick={()=>{
                                             DeleteDietplans(el.id)
-                                        }}>Delete</button></td>
-                                        <td><Link to={`/admin/dietplans/update/${el.id}`} className="btn btn-success">Update</Link></td>
+                                        }}><i className="fa fa-trash"></i></button>
+                                        </td>
                                     </tr>
                                 )
                             })}
@@ -83,6 +105,7 @@ export default function ManageDietplan(){
                     </table> 
                 </div>
             </div>
+            }
         </div>
         </>
     )

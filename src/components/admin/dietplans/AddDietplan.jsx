@@ -2,6 +2,7 @@ import { addDoc, collection, Timestamp} from "firebase/firestore"
 import { useState } from "react"
 import { db } from "../../../Firebase"
 import { toast } from "react-toastify"
+import { FadeLoader } from "react-spinners"
 
 
 export default function AddDietplan(){
@@ -13,9 +14,11 @@ export default function AddDietplan(){
     const [duration, setDuration]=useState("")
     const [min, setMin]=useState("")
     const [max, setMax]=useState("")
+    const [load, setLoad]=useState(false)
 
     const handleForm=async(event)=>{
         event.preventDefault()
+        setLoad(true)
         saveData()
     }
     const saveData=async ()=>{
@@ -47,6 +50,9 @@ export default function AddDietplan(){
         catch(error){
             toast.error(error.message)
         }
+        finally{
+            setLoad(false)
+        }
     }
     return(
         <>
@@ -76,6 +82,9 @@ export default function AddDietplan(){
             </section>
             <section className="ftco-section bg-light">
                 <div className="container">
+                    {load ?
+                    <FadeLoader color="#069ad4ff" size={30} cssOverride={{display:"block",margin:"0 auto"}} loading={load}/>
+                    :
                     <div className="row justify-content-center">
                         <div className="col-md-12">
                             <div className="wrapper">
@@ -133,7 +142,8 @@ export default function AddDietplan(){
                                                             <label className="label" htmlFor="cuisine">
                                                             Cuisine  
                                                             </label>
-                                                            <select value={type} onChange={(event)=>{
+                                                            <select value={cuisine}
+                                                             onChange={(event)=>{
                                                                 setCuisine(event.target.value)
                                                             }}className="form-control">
                                                                 <option value={""} disabled selected>Select</option>
@@ -303,6 +313,7 @@ export default function AddDietplan(){
                             </div>
                         </div>
                     </div>
+                    }
                 </div>
             </section>
         </>
