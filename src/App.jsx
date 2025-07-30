@@ -20,12 +20,12 @@ import ManageDietplan from "./components/admin/dietplans/ManageDietplan"
 import AddSubscription from "./components/admin/dietplans/AddSubscription"
 import ManageSubscription from "./components/admin/dietplans/ManageSubscription"
 import AddUsers from "./components/admin/dietplans/AddUsers"
-import ManageUsers from "./components/admin/dietplans/ManageUsers"
 import AddDietdetails from "./components/admin/dietplans/AddDietdetails"
 import ManageDietdetails from "./components/admin/dietplans/ManageDietdetails"
 import UpdateDietplan from "./components/admin/dietplans/UpdateDietplan"
 import UpdateDietdetails from "./components/admin/dietplans/UpdateDietdetails"
 import UpdateSubscription from "./components/admin/dietplans/UpdateSubscription"
+import ManageUsers from "./components/admin/pages/ManageUsers"
 
 
 

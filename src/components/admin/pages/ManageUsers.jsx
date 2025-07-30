@@ -1,10 +1,11 @@
-import { collection, deleteDoc, doc, onSnapshot, query } from "firebase/firestore"
+import { collection, deleteDoc, doc, onSnapshot, query, updateDoc } from "firebase/firestore"
 import { useEffect, useState } from "react"
 import { Link } from "react-router-dom"
 import { db } from "../../../Firebase"
 import { toast } from "react-toastify"
 import { FadeLoader } from "react-spinners"
 import Swal from "sweetalert2"
+import Switch from "react-switch"
 export default function ManageUsers(){
     const [users, setUsers]=useState([])
     const [load, setLoad]=useState(true)
@@ -20,7 +21,7 @@ export default function ManageUsers(){
     useEffect(()=>{
         fetchData()
     },[])
-    const deleteUsers=(UserId)=>{
+    const changeStatus=(userId, status)=>{
         Swal.fire({
         title: "Are you sure?",
         text: "You won't be able to revert this!",
@@ -28,13 +29,16 @@ export default function ManageUsers(){
         showCancelButton: true,
         confirmButtonColor: "#3085d6",
         cancelButtonColor: "#d33",
-        confirmButtonText: "Yes, delete it!"
+        confirmButtonText: `Yes, ${status?"Block":"Un-block"}!`
         }).then(async (result) => {
           if (result.isConfirmed) {
-            await deleteDoc(doc(db,"users", UsersId))
+            let data={
+                status:!status
+            }
+            await updateDoc(doc(db,"users", userId),data)
             Swal.fire({
-              title: "Deleted!",
-              text: "Your file has been deleted.",
+              title: `${status?"Blocked":"Un-blocked"}!`,
+              //text: "Your file has been deleted.",
               icon: "success"
             });
           }
@@ -85,6 +89,7 @@ export default function ManageUsers(){
                                 <th>Email</th>
                                 <th>Contact</th>
                                 <th>Goals</th>
+                                <th>Status</th>
                                 <th>Actions</th>
                             </tr>
                         </thead>
@@ -97,10 +102,13 @@ export default function ManageUsers(){
                                         <td>{el?.email}</td>
                                         <td>{el?.contact}</td>
                                         <td>{el?.goals}</td>
-                                        <td><Link to={`/admin/users/update/${el.id}`} className="btn btn-primary"><i className="fa fa-edit"></i></Link>
-                                        <button className="btn btn-outline-danger mx-2" onClick={()=>{
-                                            deleteUsers(el.id)
-                                        }}><i className="fa fa-trash"></i></button>
+                                        <td>
+                                            {el?.status?"Active":"In-active"}</td>
+                                        <td> 
+                                        <button className="btn btn mx-2">
+                                             <Switch checked={el.status} onChange={()=>{
+                                                changeStatus(el.id, el.status)
+                                             }}/> </button>
                                         </td>
                                     </tr>
                                 )
