@@ -3,22 +3,41 @@ import { Link } from "react-router-dom"
 import { collection, deleteDoc, doc, onSnapshot, query } from "firebase/firestore"
 import { db } from "../../../Firebase"
 import { toast } from "react-toastify"
+import { FadeLoader } from "react-spinners"
 export default function ManageDietdetails(){
     const [dietdetails, setDietdetails]=useState([])
+    const [load, setLoad]=useState(true)
     const fetchData=()=>{
         let q= query(collection(db,"dietdetails"))
     onSnapshot(q,(dietdetailsCol)=>{
         setDietdetails(dietdetailsCol.docs?.map((el)=>{
             return {...el.data(), id:el.id};
         }))
+        setLoad(false)
     })
     }
     useEffect(()=>{
         fetchData()
     },[])
     const deleteDietdetails= async(DietdetailsId)=>{
-        await deleteDoc(doc(db,"dietdetails", DietdetailsId))
-        toast.success("Diet details deleted")
+        Swal.fire({
+                title: "Are you sure?",
+                text: "You won't be able to revert this!",
+                icon: "warning",
+                showCancelButton: true,
+                confirmButtonColor: "#3085d6",
+                cancelButtonColor: "#d33",
+                confirmButtonText: "Yes, delete it!"
+                }).then(async (result) => {
+                  if (result.isConfirmed) {
+                    await deleteDoc(doc(db,"dietdetails", DietdetailsId))
+                    Swal.fire({
+                      title: "Deleted!",
+                      text: "Your details has been deleted.",
+                      icon: "success"
+                    });
+                }
+            });
     }
     return(
         <>
@@ -47,6 +66,10 @@ export default function ManageDietdetails(){
                 </div>
         </section>
         <div className="container my-5">
+            {load ?
+                <FadeLoader color="#069ad4ff" size={30} cssOverride={{display:"block", margin:"0 auto"}} loading={load}/>
+                :
+            
             <div className="row">
                 <div className="col table-responsive">
                     <div className="d-flex justify-content-end">
@@ -63,16 +86,15 @@ export default function ManageDietdetails(){
                                 <th>Time</th>
                                 <th>Item</th>
                                 <th>Quantity</th>
-                                <th>Calorie</th>
-                                <th>Recipe</th>
-                                <th>Protein</th>
-                                <th>Carbohydrates</th>
-                                <th>Fats</th>
-                                <th>Fibre</th>
-                                <th>Sugar</th>
+                                {/* <th>Calorie</th> */}
+                                {/* <th>Recipe</th> */}
+                                {/* <th>Protein</th> */}
+                                {/* <th>Carbohydrates</th> */}
+                                {/* <th>Fats</th> */}
+                                {/* <th>Fibre</th> */}
+                                {/* <th>Sugar</th> */}
                                 <th>Image</th>
-                                <th>Delete</th>
-                                <th>Update</th>
+                                <th>Actions</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -86,18 +108,20 @@ export default function ManageDietdetails(){
                                         <td>{el?.time}</td>
                                         <td>{el?.item}</td>
                                         <td>{el?.quantity}</td>
-                                        <td>{el?.calorie}</td>
-                                        <td>{el?.recipe}</td>
-                                        <td>{el?.protein}</td>
-                                        <td>{el?.carbohydrates}</td>
-                                        <td>{el?.fats}</td>
-                                        <td>{el?.fibre}</td>
-                                        <td>{el?.sugar}</td>
+                                        {/* <td>{el?.calorie}</td> */}
+                                        {/* <td>{el?.recipe}</td> */}
+                                        {/* <td>{el?.protein}</td> */}
+                                        {/* <td>{el?.carbohydrates}</td> */}
+                                        {/* <td>{el?.fats}</td> */}
+                                        {/* <td>{el?.fibre}</td> */}
+                                        {/* <td>{el?.sugar}</td> */}
                                         <td>{el?.image}</td>
-                                        <td><button className="btn btn-danger" onClick={()=>{
-                                            deleteDietdetails(el.id)
-                                        }}>Delete</button></td>
-                                        <td><Link to={`/admin/dietdetails/update/${el.id}`} className="btn btn-success">Update</Link></td>
+
+                                        <td><Link to={`/admin/dietdetails/update/${el.id}`} className="btn btn-primary"><i className="fa fa-edit"></i></Link>
+                                        <button className="btn btn-outline-danger mx-2" onClick={()=>{
+                                           deleteDietdetails(el.id)
+                                        }}><i className="fa fa-trash"></i></button>
+                                        </td>
                                     </tr>
                                 )
                             })}
@@ -129,6 +153,7 @@ export default function ManageDietdetails(){
                 </div> */}
                 </div>
             </div>
+            }
         </div>
     </>
     )

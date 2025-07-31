@@ -3,22 +3,41 @@ import { useEffect, useState } from "react"
 import { Link } from "react-router-dom"
 import { db } from "../../../Firebase"
 import { toast } from "react-toastify"
+import { FadeLoader } from "react-spinners"
 export default function ManageSubscription(){
     const [subscription, setSubscription]=useState([])
+    const [load, setLoad]=useState(true)
         const fetchData=()=>{
             let q= query(collection(db,"subscription"))
         onSnapshot(q,(subscriptionCol)=>{
             setSubscription(subscriptionCol.docs?.map((el)=>{
                 return {...el.data(), id:el.id};
             }))
+            setLoad(false)
         })
         }
         useEffect(()=>{
             fetchData()
         },[])
         const deleteSubscription=async(SubscriptionId)=>{
-            await deleteDoc(doc(db,"subscription",SubscriptionId))
-            toast.success("Subscription deleted successfully")
+            Swal.fire({
+                    title: "Are you sure?",
+                    text: "You won't be able to revert this!",
+                    icon: "warning",
+                    showCancelButton: true,
+                    confirmButtonColor: "#3085d6",
+                    cancelButtonColor: "#d33",
+                    confirmButtonText: "Yes, delete it!"
+                    }).then(async (result) => {
+                      if (result.isConfirmed) {
+                        await deleteDoc(doc(db,"subscriptionplans", SubscriptionId))
+                        Swal.fire({
+                          title: "Deleted!",
+                          text: "Your subscription has been deleted.",
+                          icon: "success"
+                        });
+                      }
+                    });
         }
     return(
         <>
@@ -47,6 +66,9 @@ export default function ManageSubscription(){
             </div>
         </section>
         <div className="container my-5">
+            {load ?
+            <FadeLoader color="#069ad4ff" size={30} cssOverride={{display:"block", margin:"0 auto"}} loading={load}/>
+            :
                     <div className="row">
                         <div className="col table-responsive">
                             <div className="d-flex justify-content-end">
@@ -62,8 +84,7 @@ export default function ManageSubscription(){
                                         <th>Goals</th>
                                         <th>Date</th>
                                         <th>Item</th>
-                                        <th>Delete</th>
-                                        <th>Update</th>
+                                        <th>Actions</th>
                                     </tr>
                                 </thead>
                                 <tbody>
@@ -76,10 +97,12 @@ export default function ManageSubscription(){
                                                 <td>{el?.goals}</td>
                                                 <td>{el?.date}</td>
                                                 <td>{el?.item}</td>
-                                                <td><button className="btn btn-danger" onClick={()=>{
+                                            
+                                                <td><Link to={`/admin/subscription/update/${el.id}`} className="btn btn-primary"><i className="fa fa-edit"></i></Link>
+                                                    <button className="btn btn-outline-danger mx-2" onClick={()=>{
                                                     deleteSubscription(el.id)
-                                                }}>Delete</button></td>
-                                                <td><Link to={`/admin/subscription/update/${el.id}`} className="btn btn-success">Update</Link></td>
+                                                }}><i className="fa fa-trash"></i></button>
+                                                </td>
                                             </tr>
                                         )
                                     })}
@@ -87,6 +110,7 @@ export default function ManageSubscription(){
                             </table>
                         </div>
                     </div>
+                }
         </div>
         </>
     )

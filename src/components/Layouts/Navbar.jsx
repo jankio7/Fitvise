@@ -1,7 +1,9 @@
-import { Link, useNavigate } from "react-router-dom"
+
+import { Link, useLocation, useNavigate } from "react-router-dom"
 import Swal from "sweetalert2"
 
 export default function Navbar(){
+  const {pathName}=useLocation()
   let isLogin=sessionStorage.getItem("isLogin")
   let name=sessionStorage.getItem("name")
   const nav=useNavigate()
@@ -106,37 +108,37 @@ export default function Navbar(){
                     </button>
                     <div className="collapse navbar-collapse" id="ftco-nav">
                         <ul className="navbar-nav ml-auto">
-                        <li className="nav-item">
+                        <li className={`nav-item ${pathName=="/" && "active"}`}>
                             <Link to="/" className="nav-link">
                               Home
                             </Link>
                         </li>
-                        <li className="nav-item">
+                        <li className={`nav-item ${pathName=="/about" && "active"}`}>
                             <Link to="/about" className="nav-link">
                               About
                             </Link>
                         </li>
-                        <li className="nav-item">
+                        <li className={`nav-item ${pathName=="/coach" && "active"}`}>
                             <Link to="/coach" className="nav-link">
                               Coach
                             </Link>
                         </li>
-                        <li className="nav-item">
+                        <li className={`nav-item ${pathName=="/stories" && "active"}`}>
                             <Link to="/successstories" className="nav-link">
                               Stories
                             </Link>
                         </li>
-                        <li className="nav-item active">
+                        <li className={`nav-item ${pathName=="/blog" && "active"}`}>
                             <Link to="/blog" className="nav-link">
                               Blog
                             </Link>
                         </li>
-                        <li className="nav-item">
+                        <li className={`nav-item ${pathName=="/contact" && "active"}`}>
                             <Link to="/contact" className="nav-link">
                               Contact
                             </Link>
                         </li>
-                        <li className="nav-item mt-4">
+                        <li className={`nav-item mt-4 ${pathName=="/login" && "active"}`}>
                           { 
                             isLogin?
                             <Link to="#" onClick={logout} className="btn btn-primary">

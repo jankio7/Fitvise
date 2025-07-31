@@ -32,8 +32,8 @@ import ManageUsers from "./components/admin/pages/ManageUsers"
 
 
 
-function App() {
 
+function App() {
   return (
     <>
       <BrowserRouter>

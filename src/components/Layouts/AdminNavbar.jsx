@@ -1,7 +1,9 @@
-import { Link, useNavigate } from "react-router-dom"
+import { Link, useLocation, useNavigate } from "react-router-dom"
 import Swal from "sweetalert2"
 
 export default function AdminNavbar(){
+  const {pathName}=useLocation()
+
   let isLogin=sessionStorage.getItem("isLogin")
   let name=sessionStorage.getItem("name")
   const nav=useNavigate()
@@ -105,32 +107,32 @@ export default function AdminNavbar(){
                     </button>
                     <div className="collapse navbar-collapse" id="ftco-nav">
                         <ul className="navbar-nav ml-auto">
-                        <li className="nav-item">
+                        <li className={`nav-item ${pathName=="/admin" && "active"}`}>
                             <Link to="/" className="nav-link">
                               Home
                             </Link>
                         </li>
-                        <li className="nav-item">
+                        <li className={`nav-item ${pathName=="/admin" && "active"}`}>
                             <Link to="/admin/dietplans/manage" className="nav-link">
                               Diet Plans
                             </Link>
                         </li>
-                        <li className="nav-item active">
+                        <li className={`nav-item ${pathName=="/admin" && "active"}`}>
                             <Link to="/admin/subscription/manage" className="nav-link">
                               Subscription
                             </Link>
                         </li>
-                        <li className="nav-item">
+                        <li className={`nav-item ${pathName=="/admin" && "active"}`}>
                             <Link to="/admin/users/manage" className="nav-link">
                               Users
                             </Link>
                         </li>
-                        <li className="nav-item">
+                        <li className={`nav-item ${pathName=="/admin" && "active"}`}>
                             <Link to="/admin/dietdetails/manage" className="nav-link">
                               Diet details
                             </Link>
                         </li>
-                        <li className="nav-item mt-4">
+                        <li className={`nav-item mt-4 ${pathName=="/admin" && "active"}`}>
                           { 
                             isLogin?
                             <Link to="#" onClick={logout} className="btn btn-primary">

@@ -2,6 +2,7 @@ import { addDoc, collection, Timestamp} from "firebase/firestore"
 import { useState } from "react"
 import { db } from "../../../Firebase"
 import { toast } from "react-toastify"
+import { FadeLoader } from "react-spinners"
 
 export default function AddUsers(){
     const [name, setName]=useState("")
@@ -9,8 +10,10 @@ export default function AddUsers(){
     const [contact, setContact]=useState("")
     const [goals, setGoals]=useState("")
     const [actions, setActions]=useState("")
+    const [load, setLoad]=useState(false)
     const handleForm=async(event)=>{
         event.preventDefault()
+        setLoad(true)
         saveData()
     }
     const saveData=async ()=>{
@@ -35,6 +38,9 @@ export default function AddUsers(){
             }
             catch(error){
                 toast.error(error.message)
+            }
+            finally{
+                setLoad(false)
             }
         }
     return(
@@ -65,6 +71,9 @@ export default function AddUsers(){
         </section>
         <section className="ftco-section bg-light">
             <div className="container">
+                {load ?
+                <FadeLoader color="#069ad4ff" size={30} cssOverride={{display:"block", margin:"0 auto"}} loading={load}/>
+            :
                     <div className="row justify-content-center">
                         <div className="col-md-12">
                             <div className="wrapper">
@@ -191,7 +200,9 @@ export default function AddUsers(){
                             </div>
                         </div>
                     </div>
+                }
                 </div>
+
                 
         </section>
         </>

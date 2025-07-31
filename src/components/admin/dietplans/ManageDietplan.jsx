@@ -20,7 +20,7 @@ export default function ManageDietplan(){
     useEffect(()=>{
         fetchData()
     },[])
-    const DeleteDietplans=(DietplanId)=>{
+    const deleteDietplans=(DietplanId)=>{
         Swal.fire({
         title: "Are you sure?",
         text: "You won't be able to revert this!",
@@ -34,7 +34,7 @@ export default function ManageDietplan(){
             await deleteDoc(doc(db,"dietplans", DietplanId))
             Swal.fire({
               title: "Deleted!",
-              text: "Your file has been deleted.",
+              text: "Your diet plan has been deleted.",
               icon: "success"
             });
           }
@@ -95,7 +95,7 @@ export default function ManageDietplan(){
                                         <td>{el?.title}</td>
                                         <td><Link to={`/admin/dietplans/update/${el.id}`} className="btn btn-primary"><i className="fa fa-edit"></i></Link>
                                         <button className="btn btn-outline-danger mx-2" onClick={()=>{
-                                            DeleteDietplans(el.id)
+                                            deleteDietplans(el.id)
                                         }}><i className="fa fa-trash"></i></button>
                                         </td>
                                     </tr>

@@ -3,7 +3,7 @@ import { useState } from "react"
 import { Link, useNavigate } from "react-router-dom"
 import { toast } from "react-toastify"
 import { auth, db } from "../../Firebase"
-import { doc, getDoc } from "firebase/firestore"
+import { doc, getDoc, setDoc, Timestamp } from "firebase/firestore"
 
 export default function Login(){
     const [email, setEmail]=useState("")
@@ -21,32 +21,54 @@ export default function Login(){
         })
     }
     const getUserData=async (userId)=>{
-       let userDoc=await getDoc(doc(db, "users", userId))
-       let userData=userDoc.data()
-       sessionStorage.setItem("name", userData?.name)
-       sessionStorage.setItem("email", userData?.email)
-       sessionStorage.setItem("userType", userData?.userType)  
-       sessionStorage.setItem("userId", userId)  
-       sessionStorage.setItem("isLogin", true)  
-       toast.success("Login successfully")  
-       if(userData?.userType==1){  
-        nav("/admin")
-       }else{
-           nav("/")
-       }
+        let userDoc=await getDoc(doc(db, "users", userId))
+        let userData=userDoc.data()
+        if(userData?.status){
+            sessionStorage.setItem("name", userData?.name)
+            sessionStorage.setItem("email", userData?.email)
+            sessionStorage.setItem("userType", userData?.userType)  
+            sessionStorage.setItem("userId", userId)  
+            sessionStorage.setItem("isLogin", true)  
+            toast.success("Login successfully")  
+            if(userData?.userType==1){  
+            nav("/admin")
+            }else{
+                nav("/")
+            }
+        }else{
+            toast.error("Your account has been blocked !!")
+        }
     }
     const signInGoogle=()=>{
         let provider=new GoogleAuthProvider()
         signInWithPopup(auth, provider)
         .then((userCred)=>{
             let userId=userCred.user.uid
-            getUserData(userId)
+            saveData(userId, userCred)
         })
         .catch((error)=>{
             toast.error(error.message)
         })
     } 
-
+    const saveData=async (userId, userCred)=>{      
+                try{
+                let data={
+                    name:userCred.user.displayName,
+                   email:email,
+                   contact:userCred.user.phoneNumber,
+                   userType:3,
+                   userId:userId,
+                   status:true,
+                   createdAt:Timestamp.now()
+                }
+                await setDoc(doc(db, "users", userId), data)
+                toast.success("Registered successfully")
+                getUserData(userId)
+            }
+                catch(error){
+                    toast.error(error.message)
+                }
+        }
     return(
         <>
             <section
