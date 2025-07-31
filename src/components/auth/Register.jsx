@@ -90,6 +90,7 @@ import  { useNavigate } from "react-router-dom"
                 </div>
                 </div>
            </section> 
+           
             <section className="ftco-section bg-light">
                 <div className="container">
                     <div className="row justify-content-center">
@@ -256,12 +257,16 @@ import  { useNavigate } from "react-router-dom"
                                             </form>
                                         </div>
                                     </div>
+                                    <div className="col-md-5 col-lg-4 d-flex align-itmes-stretch">
+                                        <div className="info-wrap w-100 img"
+                                        style={{backgroundImage: "url(/assets/images/coach-1.jpg"}}></div>
+                                    </div>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
-            </section>                
+            </section>    
         </>
     )
 }
