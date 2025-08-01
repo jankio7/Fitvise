@@ -8,6 +8,7 @@ import { doc, getDoc, setDoc, Timestamp } from "firebase/firestore"
 export default function Login(){
     const [email, setEmail]=useState("")
     const [password, setPassword]=useState("")
+    
     let nav= useNavigate()
     const handleForm=(event)=>{
         event.preventDefault()

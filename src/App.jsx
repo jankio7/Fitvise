@@ -14,7 +14,7 @@ import Layout from "./components/layouts/Layout"
 import Login from "./components/auth/Login"
 import Register from "./components/auth/Register"
 import { ToastContainer } from "react-toastify"
-import AdminLayout from "./components/Layouts/AdminLayout"
+
 import AddDietplan from "./components/admin/dietplans/AddDietplan"
 import ManageDietplan from "./components/admin/dietplans/ManageDietplan"
 import AddSubscription from "./components/admin/dietplans/AddSubscription"
@@ -26,6 +26,8 @@ import UpdateDietplan from "./components/admin/dietplans/UpdateDietplan"
 import UpdateDietdetails from "./components/admin/dietplans/UpdateDietdetails"
 import UpdateSubscription from "./components/admin/dietplans/UpdateSubscription"
 import ManageUsers from "./components/admin/pages/ManageUsers"
+import Dashboard from "./components/admin/pages/Dashboard"
+import AdminLayout from "./components/layouts/AdminLayout"
 
 
 
@@ -53,6 +55,7 @@ function App() {
             <Route path="register" element={<Register/>}/> 
           </Route>  
             <Route path="/admin" element={<AdminLayout/>}>
+              <Route index element={<Dashboard/>}/>
               <Route path="dietplans/add" element={<AddDietplan/>}/>
               <Route path="dietplans/manage" element={<ManageDietplan/>}/>
               <Route path="dietplans/update/:id" element={<UpdateDietplan/>}/>
