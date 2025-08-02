@@ -122,7 +122,7 @@ export default function UsersNavbar(){
                               Subscription
                             </Link>
                         </li> */}
-                        <li className={`nav-item mt-4 ${pathName=="/admin" && "active"}`}>
+                        <li className={`nav-item mt-4 ${pathName=="/users" && "active"}`}>
                           { 
                             isLogin?
                             <Link to="#" onClick={logout} className="btn btn-primary">

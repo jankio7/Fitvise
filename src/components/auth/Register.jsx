@@ -58,7 +58,11 @@ import  { useNavigate } from "react-router-dom"
                 toast.success("Login successfullly")
                 if(userData.userType==1){
                     nav("/admin")
-                }else{
+                }
+                else if(userData.userType==3){
+                    nav("/users")
+                }
+                    else{
                     nav("/")
                 }
             }

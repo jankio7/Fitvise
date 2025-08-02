@@ -172,7 +172,7 @@ export default function Login(){
                                                     </div>
                                                 </div>
                                             </form>
-                                            <button type="button" onClick={signInGoogle} className="btn btn-danger"><i class="bi bi-google"></i> Sign in with google</button>
+                                            <button type="button" onClick={signInGoogle} className="btn btn-danger"><i className="bi bi-google"></i> Sign in with google</button>
                                            <div>Don't have an account ? <Link to={"/register"}>Register Here !</Link></div>
                                         </div>
                                     </div>

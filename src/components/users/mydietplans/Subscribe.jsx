@@ -13,6 +13,7 @@ export default function Subscribe(){
     const [health, setHealth]=useState("")
     const [request, setRequest]=useState("")
     const [load, setLoad]=useState(false)
+
     const handleForm=async(event)=>{
         event.preventDefault()
         setLoad(true)
@@ -32,7 +33,7 @@ export default function Subscribe(){
                     createdAt:Timestamp.now()
                 }
                 //console.log(data);
-                await addDoc(collection(db, "subscription"),data)
+                await addDoc(collection(db, "subscribe"),data)
                 toast.success("Subscription added successfully")
                 setGoals("")
                 setDate("")
@@ -50,6 +51,7 @@ export default function Subscribe(){
                 setLoad(false)
             }
         }
+
     return (
         <>
             <section
