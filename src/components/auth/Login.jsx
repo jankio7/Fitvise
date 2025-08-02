@@ -33,7 +33,11 @@ export default function Login(){
             toast.success("Login successfully")  
             if(userData?.userType==1){  
             nav("/admin")
-            }else{
+            }
+            else if(userData?.userType==3){
+            nav("/users")
+            }
+            else{
                 nav("/")
             }
         }else{

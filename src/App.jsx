@@ -28,6 +28,8 @@ import UpdateSubscription from "./components/admin/dietplans/UpdateSubscription"
 import ManageUsers from "./components/admin/pages/ManageUsers"
 import Dashboard from "./components/admin/pages/Dashboard"
 import AdminLayout from "./components/layouts/AdminLayout"
+import Subscribe from "./components/users/mydietplans/Subscribe"
+import UsersLayout from "./components/layouts/UsersLayout"
 
 
 
@@ -53,7 +55,8 @@ function App() {
             <Route path="services" element={<Services/>}/>
             <Route path="login" element={<Login/>}/>   
             <Route path="register" element={<Register/>}/> 
-          </Route>  
+          </Route>
+
             <Route path="/admin" element={<AdminLayout/>}>
               <Route index element={<Dashboard/>}/>
               <Route path="dietplans/add" element={<AddDietplan/>}/>
@@ -67,6 +70,9 @@ function App() {
               <Route path="dietdetails/add" element={<AddDietdetails/>}/>
               <Route path="dietdetails/manage" element={<ManageDietdetails/>}/>
               <Route path="dietdetails/update/:id" element={<UpdateDietdetails/>}/>
+            </Route>
+            <Route path="/users" element={<UsersLayout/>}>
+              <Route path="mydietplans/subscribe" element={<Subscribe/>}/>
             </Route>
           <Route path="/*" element={<Error/>}/>
         </Routes>
