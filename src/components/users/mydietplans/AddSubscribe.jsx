@@ -4,7 +4,7 @@ import { db } from "../../../Firebase"
 import { toast } from "react-toastify"
 import { FadeLoader } from "react-spinners"
 
-export default function Subscribe(){
+export default function AddSubscribe(){
     const [goals, setGoals]=useState("")
     const [date, setDate]=useState("")
     const [restrictions, setRestrictions]=useState("")
